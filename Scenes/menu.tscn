@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://ck0xpd8w0527k"]
+[gd_scene load_steps=5 format=3 uid="uid://ck0xpd8w0527k"]
+
+[ext_resource type="Script" path="res://Scripts/Start_Button.gd" id="1_86j56"]
+[ext_resource type="Script" path="res://Scripts/Credit_Button.gd" id="2_dvma6"]
+[ext_resource type="Script" path="res://Scripts/Exit_Button.gd" id="3_3nnim"]
+[ext_resource type="AudioStream" uid="uid://b56ynnx4jkymm" path="res://Audio/scary_BGM.mp3" id="4_ruw5u"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -7,3 +12,73 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxCon1" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title_Label" type="Label" parent="MarginContainer/VBoxCon1"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.854902, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Dungeon of Horrors"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxCon1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxCon2" type="VBoxContainer" parent="MarginContainer/VBoxCon1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Start_Button" type="Button" parent="MarginContainer/VBoxCon1/HBoxContainer/VBoxCon2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+text = "START"
+script = ExtResource("1_86j56")
+
+[node name="Credit_Button" type="Button" parent="MarginContainer/VBoxCon1/HBoxContainer/VBoxCon2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+text = "CREDITS"
+script = ExtResource("2_dvma6")
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/VBoxCon1/HBoxContainer/VBoxCon2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+text = "EXIT"
+script = ExtResource("3_3nnim")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxCon1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Start_Menu_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ruw5u")
+volume_db = 0.01
+pitch_scale = 0.75
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/VBoxCon1/HBoxContainer/VBoxCon2/Start_Button" to="MarginContainer/VBoxCon1/HBoxContainer/VBoxCon2/Start_Button" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxCon1/HBoxContainer/VBoxCon2/Credit_Button" to="MarginContainer/VBoxCon1/HBoxContainer/VBoxCon2/Credit_Button" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxCon1/HBoxContainer/VBoxCon2/Exit_Button" to="MarginContainer/VBoxCon1/HBoxContainer/VBoxCon2/Exit_Button" method="_on_pressed"]
