@@ -3,3 +3,5 @@
 [node name="Level 1" type="Node2D"]
 
 [node name="Player" type="Area2D" parent="."]
+position = Vector2(539, 177)
+metadata/_edit_group_ = true
