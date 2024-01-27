@@ -37,3 +37,13 @@ func _process(delta):
 		
 	
 	
+
+
+func collect_tp():
+	#reset toiletPaper_size
+	
+
+func lose_tp():
+	
+
+func 
