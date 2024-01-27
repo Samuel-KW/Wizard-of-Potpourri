@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://8pm0cjiupg3j"]
+
+[ext_resource type="Script" path="res://Scripts/Static.gd" id="1_e8bjs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1t4rj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahij6"]
+
+[node name="Lvl2" type="Node2D"]
+
+[node name="Dynamic" type="RigidBody2D" parent="."]
+position = Vector2(101, 117)
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dynamic"]
+shape = SubResource("CircleShape2D_1t4rj")
+
+[node name="Static" type="Area2D" parent="."]
+position = Vector2(98, 278)
+script = ExtResource("1_e8bjs")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static"]
+shape = SubResource("CircleShape2D_ahij6")
+
+[connection signal="body_entered" from="Static" to="Static" method="_on_body_entered"]
