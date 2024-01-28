@@ -4,7 +4,7 @@ var screen_size # Size of the game window.
 var RADIUS = 30
 
 const MAX_SPEED = 200
-const SPEED = 10
+const SPEED = 100
 
 const MAX_LENGTH = 2000
 const PAPER_SPACING = 5
@@ -39,10 +39,10 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	if Input.is_action_pressed("move_right"):
-		velocity.x = min(velocity.x + SPEED, MAX_SPEED)
+		velocity.x = min(velocity.x + SPEED * delta, MAX_SPEED)
 
 	elif Input.is_action_pressed("move_left"):
-		velocity.x = max(velocity.x - SPEED, -MAX_SPEED)
+		velocity.x = max(velocity.x - SPEED * delta, -MAX_SPEED)
 
 	if velocity.x > 0.1:
 		roll_paper(delta)
@@ -51,7 +51,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-	
+	# Collect toilet paper
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
@@ -59,6 +59,7 @@ func _physics_process(delta):
 		if collider.collision_layer == 2:
 			$CollectTP.play()
 			collider.queue_free()
+			paper_length = 0
 
 	self.rotation += (velocity.x * delta) / RADIUS
 	

@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://cfohf7h4gne0e"]
+[gd_scene load_steps=2 format=3 uid="uid://cfohf7h4gne0e"]
+
+[ext_resource type="Texture2D" uid="uid://ulmd6kkqrq8y" path="res://Textures/Background/tile_bg.jpg" id="1_2r51n"]
 
 [node name="Introduction" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(811, 654)
+scale = Vector2(1.27344, 1.27344)
+texture = ExtResource("1_2r51n")
+region_enabled = true
+region_rect = Rect2(0, 0, 2056, 2056)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
