@@ -10,8 +10,10 @@ const MAX_LENGTH = 100
 const PAPER_SPACING = 5
 
 var is_rolling = false
-var paper_trail = []
+
 var paper_length = 0
+
+var TRAIL_ELEMENT;
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -19,10 +21,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func start(pos):
 	position = pos
 	RADIUS = $CollisionShape2D.shape.radius
+	TRAIL_ELEMENT.position = position
 	show()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var root_node = get_parent()
+	TRAIL_ELEMENT = root_node.get_node("ToiletPaperTrail")
+	
 	screen_size = get_viewport_rect().size
 	hide()
 
@@ -38,7 +44,10 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("move_left"):
 		velocity.x = max(velocity.x - SPEED, -MAX_SPEED)
 
-	roll_paper(delta)
+	if velocity.x > 0.1:
+		roll_paper(delta)
+	elif velocity.x < -0.1:
+		wind_paper(delta)
 
 	move_and_slide()
 	
@@ -55,6 +64,7 @@ func _physics_process(delta):
 func roll_paper(delta):
 	is_rolling = true
 	paper_length += velocity.x * delta
+	paper_length = min(paper_length, MAX_LENGTH)
 	
 	if paper_length > MAX_LENGTH:
 		velocity.x = 0
@@ -63,9 +73,20 @@ func roll_paper(delta):
 	
 	
 func wind_paper(delta):
-	pass
+	is_rolling = false
+	
+	paper_length += velocity.x * delta
+	
+	if paper_length < 0:
+		paper_length = 0;
+		
+	update_paper_visual()
 	
 func update_paper_visual():
-	pass
+	var pts = TRAIL_ELEMENT.get_points()
+	var dist = position.distance_to(pts[pts.size() - 1])
+	if is_rolling and dist > 5:
+		TRAIL_ELEMENT.add_point(TRAIL_ELEMENT.position - position)
+		paper_length += dist
 	
 
