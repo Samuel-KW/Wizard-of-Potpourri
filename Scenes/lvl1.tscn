@@ -54,6 +54,9 @@ size = Vector2(1198, 94)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_my2ep"]
 size = Vector2(19380.1, 2907.61)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mjhn"]
+size = Vector2(2855.95, 4578.01)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_tbfhp"]
 radius = 100.005
 
@@ -158,6 +161,10 @@ offset_bottom = 1454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_edit_group_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground"]
+position = Vector2(4336.25, 2804.62)
+shape = SubResource("RectangleShape2D_1mjhn")
 
 [node name="ToiletPaper" type="StaticBody2D" parent="."]
 position = Vector2(1714, -216)
