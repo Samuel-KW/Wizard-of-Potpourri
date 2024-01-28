@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=20 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Script" path="res://Scripts/Static.gd" id="1_xnjg1"]
-[ext_resource type="Texture2D" uid="uid://bd1h7ivrr1jmm" path="res://icon.svg" id="2_5a3jw"]
+[ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
 [ext_resource type="Script" path="res://Scripts/Pigeon.gd" id="3_c1s1x"]
+[ext_resource type="Script" path="res://Scripts/WaterParticles.gd" id="3_vuann"]
 [ext_resource type="Texture2D" uid="uid://c8f8wigqn1x2t" path="res://Textures/umbrellaPidgeon/frame0000.png" id="4_m6dgu"]
 [ext_resource type="Texture2D" uid="uid://chr8hkdqhmsyk" path="res://Textures/umbrellaPidgeon/frame0001.png" id="5_47b67"]
 [ext_resource type="Texture2D" uid="uid://fmkp5cpkyqk1" path="res://Textures/umbrellaPidgeon/frame0002.png" id="6_lbnwx"]
@@ -76,18 +77,19 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ahij6")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(472, 509)
+position = Vector2(347, 641)
 rotation = 4.71239
 amount = 30
 lifetime = 5.0
 randomness = 0.2
-texture = ExtResource("2_5a3jw")
+texture = ExtResource("2_olfqt")
 spread = 4.32
 initial_velocity_min = 539.55
 initial_velocity_max = 867.55
 angular_velocity_max = 720.0
-scale_amount_min = 0.1
-scale_amount_max = 0.2
+scale_amount_min = 0.4
+scale_amount_max = 0.6
+script = ExtResource("3_vuann")
 
 [node name="Pigeon" type="RigidBody2D" parent="."]
 z_index = 2
@@ -169,7 +171,7 @@ texture = ExtResource("8_0dfui")
 shape = SubResource("CircleShape2D_tbfhp")
 
 [node name="Speed" type="Area2D" parent="."]
-position = Vector2(1122, 551)
+position = Vector2(1531, 433)
 script = ExtResource("9_ldf38")
 metadata/_edit_group_ = true
 

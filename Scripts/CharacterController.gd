@@ -6,7 +6,7 @@ var RADIUS = 30
 const MAX_SPEED = 200
 const SPEED = 10
 
-const MAX_LENGTH = 100
+const MAX_LENGTH = 2000
 const PAPER_SPACING = 5
 
 var is_rolling = false
@@ -65,10 +65,10 @@ func _physics_process(delta):
 func roll_paper(delta):
 	is_rolling = true
 	paper_length += velocity.x * delta
-	paper_length = min(paper_length, MAX_LENGTH)
 	
 	if paper_length > MAX_LENGTH:
-		velocity.x = 0
+		velocity.x *= -1
+		paper_length = MAX_LENGTH
 		
 	update_paper_visual()
 	
@@ -88,6 +88,6 @@ func update_paper_visual():
 	var dist = position.distance_to(pts[pts.size() - 1])
 	if is_rolling and dist > 5:
 		TRAIL_ELEMENT.add_point(TRAIL_ELEMENT.position - position)
-		paper_length += dist
+		#paper_length += dist
 	
 
