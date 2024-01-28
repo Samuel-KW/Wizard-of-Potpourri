@@ -31,17 +31,13 @@ func _process(delta):
 		$AnimatedSprite2D.stop()
 		
 	# Update the character position
-	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
-
+	#
+	#if collision_info:
+		#var collider = collision_info.get_collider()
+		#if collider.collision_layer == 2:
+			#$Collect_TP.play()
+			#collider.visible = false
 
 func lose_tp():
 	pass
 
-
-func _on_body_entered(body):
-	print("Yuh") # Replace with function body.
-	$Collect_TP.play()
-	$CollisionShape2D.disable = true
-	$ToiletPaper.visible = false
-	$ToiletPaper.die()

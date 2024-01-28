@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6w3nk2cpamjp"
-path="res://.godot/imported/ferret-roll-1.png-61be2e2bafed3aced401398b4709576b.ctex"
+uid="uid://cn72c4hy86x6f"
+path="res://.godot/imported/frame0003.png-8fbece798eb9eaac36e70ec47767d4d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Ferret/Roll/ferret-roll-1.png"
-dest_files=["res://.godot/imported/ferret-roll-1.png-61be2e2bafed3aced401398b4709576b.ctex"]
+source_file="res://Textures/Ferret/FerretFace/frame0003.png"
+dest_files=["res://.godot/imported/frame0003.png-8fbece798eb9eaac36e70ec47767d4d5.ctex"]
 
 [params]
 

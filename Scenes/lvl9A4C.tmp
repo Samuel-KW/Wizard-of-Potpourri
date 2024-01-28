@@ -1,12 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=21 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_lu4fg"]
-[ext_resource type="Texture2D" uid="uid://htd2batcda58" path="res://Textures/Toilet Paper/toiletPaper.png" id="2_wtd4x"]
+[ext_resource type="Texture2D" uid="uid://i2gunfiueu1h" path="res://Textures/Toilet Paper/toilet-paper-0.png" id="5_aqudc"]
 [ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="5_eeudx"]
 [ext_resource type="Texture2D" uid="uid://cfa6i28eqd8io" path="res://Textures/Ferret/FerretFace/frame0000.png" id="5_xakma"]
 [ext_resource type="Texture2D" uid="uid://cfwmu7nemua7d" path="res://Textures/Ferret/FerretFace/frame0001.png" id="6_njmyh"]
 [ext_resource type="Texture2D" uid="uid://dph043xb02iee" path="res://Textures/Ferret/FerretFace/frame0002.png" id="7_cpyh3"]
-[ext_resource type="AudioStream" uid="uid://cd4586ma3lgx6" path="res://Audio/picking up paper.wav" id="7_waiod"]
 [ext_resource type="Texture2D" uid="uid://cn72c4hy86x6f" path="res://Textures/Ferret/FerretFace/frame0003.png" id="8_aki1a"]
 [ext_resource type="Texture2D" uid="uid://s6mxc13jep2" path="res://Textures/Ferret/FerretFace/frame0004.png" id="9_lt3j0"]
 [ext_resource type="Texture2D" uid="uid://c71h6g5wduwqp" path="res://Textures/Ferret/FerretFace/frame0005.png" id="10_lcbsy"]
@@ -16,20 +15,17 @@
 [ext_resource type="Texture2D" uid="uid://be315y01wyjee" path="res://Textures/Ferret/FerretFace/frame0009.png" id="14_vuoeb"]
 [ext_resource type="Texture2D" uid="uid://oqdlc66s7brp" path="res://Textures/Ferret/FerretFace/frame0010.png" id="15_4ln3w"]
 [ext_resource type="Texture2D" uid="uid://dt5j34udnjs4l" path="res://Textures/Ferret/FerretFace/frame0011.png" id="16_cyind"]
-[ext_resource type="Script" path="res://Scripts/Camera.gd" id="17_yfecr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7cyr5"]
-radius = 100.005
+radius = 109.554
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ewe1g"]
-rough = true
-bounce = 0.05
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i60rf"]
 size = Vector2(1198, 94)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q2g2j"]
-radius = 100.02
+radius = 40.05
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tp8tm"]
 animations = [{
@@ -79,18 +75,17 @@ animations = [{
 script = ExtResource("1_lu4fg")
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(154, 134)
+position = Vector2(112, 204)
 
 [node name="ToiletPaper" type="StaticBody2D" parent="."]
-position = Vector2(854, 411)
+position = Vector2(459, 374)
 collision_layer = 2
 collision_mask = 0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="ToiletPaper"]
-position = Vector2(4.095, 15.535)
-scale = Vector2(0.485, 0.485)
-texture = ExtResource("2_wtd4x")
+position = Vector2(2, 2)
+texture = ExtResource("5_aqudc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper"]
 shape = SubResource("CircleShape2D_7cyr5")
@@ -100,7 +95,6 @@ position = Vector2(-4, 449)
 rotation = 0.14868
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_ewe1g")
-constant_angular_velocity = 0.00261799
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
@@ -114,7 +108,6 @@ offset_right = 1178.0
 offset_bottom = 82.0
 
 [node name="Ferret" type="CharacterBody2D" parent="."]
-position = Vector2(-263, -41)
 collision_mask = 3
 script = ExtResource("5_eeudx")
 metadata/_edit_group_ = true
@@ -123,22 +116,9 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_q2g2j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ferret"]
-z_index = 1
 position = Vector2(-2.48, 8.635)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_tp8tm")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.26848
-
-[node name="Sprite2D" type="Sprite2D" parent="Ferret"]
-position = Vector2(2.846, 18.329)
-scale = Vector2(0.485, 0.485)
-texture = ExtResource("2_wtd4x")
-
-[node name="CollectTP" type="AudioStreamPlayer" parent="Ferret"]
-stream = ExtResource("7_waiod")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(568, 224)
-script = ExtResource("17_yfecr")
