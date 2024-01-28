@@ -22,7 +22,7 @@ radius = 100.005
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ewe1g"]
 rough = true
-bounce = 0.05
+bounce = 0.11
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i60rf"]
 size = Vector2(1198, 94)
