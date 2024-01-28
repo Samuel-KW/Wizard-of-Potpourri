@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=24 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Script" path="res://Scripts/Static.gd" id="1_xnjg1"]
 [ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://fmkp5cpkyqk1" path="res://Textures/umbrellaPidgeon/frame0002.png" id="6_lbnwx"]
 [ext_resource type="Texture2D" uid="uid://bmv2a4832fhcp" path="res://Textures/umbrellaPidgeon/frame0003.png" id="7_pav1y"]
 [ext_resource type="Texture2D" uid="uid://htd2batcda58" path="res://Textures/Toilet Paper/toiletPaper.png" id="8_0dfui"]
+[ext_resource type="Texture2D" uid="uid://5fqo3mgumryn" path="res://Textures/Background/tile_ground.png" id="9_l2dih"]
 [ext_resource type="Script" path="res://Scripts/SpeedBoost.gd" id="9_ldf38"]
 [ext_resource type="Texture2D" uid="uid://ulmd6kkqrq8y" path="res://Textures/Background/tile_bg.jpg" id="11_idrig"]
 
@@ -137,12 +138,11 @@ position = Vector2(589, 37)
 shape = SubResource("RectangleShape2D_tqv35")
 metadata/_edit_group_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Ground/CollisionShape2D"]
-offset_left = -597.0
-offset_top = -48.0
-offset_right = 599.0
-offset_bottom = 47.0
-metadata/_edit_group_ = true
+[node name="Sprite2D" type="Sprite2D" parent="Ground/CollisionShape2D"]
+texture_repeat = 2
+texture = ExtResource("9_l2dih")
+region_enabled = true
+region_rect = Rect2(0, 0, 1196.79, 93)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_jlka1")
@@ -160,7 +160,7 @@ size_flags_vertical = 3
 metadata/_edit_group_ = true
 
 [node name="ToiletPaper" type="StaticBody2D" parent="."]
-position = Vector2(888, 548)
+position = Vector2(1714, -216)
 collision_layer = 2
 collision_mask = 0
 metadata/_edit_group_ = true
@@ -189,11 +189,11 @@ shape = SubResource("RectangleShape2D_8e80f")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(811, 654)
+position = Vector2(1989, 1900)
 scale = Vector2(1.27344, 1.27344)
 texture = ExtResource("11_idrig")
 region_enabled = true
-region_rect = Rect2(0, 0, 2056, 2056)
+region_rect = Rect2(0, 0, 4112, 4112)
 
 [connection signal="body_entered" from="Static" to="Static" method="_on_body_entered"]
 [connection signal="body_entered" from="Speed" to="Speed" method="_on_body_entered"]
