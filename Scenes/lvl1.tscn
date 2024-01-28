@@ -1,12 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=22 format=3 uid="uid://1fj3mb5a36i8"]
-=======
-<<<<<<< Updated upstream
-[gd_scene load_steps=20 format=3 uid="uid://1fj3mb5a36i8"]
-=======
-[gd_scene load_steps=22 format=3 uid="uid://1fj3mb5a36i8"]
->>>>>>> Stashed changes
->>>>>>> 996b57fffb645ee18bf90928da90dce346005b8e
 
 [ext_resource type="Script" path="res://Scripts/Static.gd" id="1_xnjg1"]
 [ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
@@ -17,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://fmkp5cpkyqk1" path="res://Textures/umbrellaPidgeon/frame0002.png" id="6_lbnwx"]
 [ext_resource type="Texture2D" uid="uid://bmv2a4832fhcp" path="res://Textures/umbrellaPidgeon/frame0003.png" id="7_pav1y"]
 [ext_resource type="Texture2D" uid="uid://htd2batcda58" path="res://Textures/Toilet Paper/toiletPaper.png" id="8_0dfui"]
-[ext_resource type="Script" path="res://Scripts/Finish_Line.gd" id="8_ivnwm"]
 [ext_resource type="Script" path="res://Scripts/SpeedBoost.gd" id="9_ldf38"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1t4rj"]
@@ -127,8 +118,6 @@ position = Vector2(314, 28)
 polygon = PackedVector2Array(263, -241, -11, -435, -359, -495, -685, -393, -967, -85)
 
 [node name="Finish_Line" type="Area2D" parent="."]
-position = Vector2(1188, 623)
-script = ExtResource("8_ivnwm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish_Line"]
 shape = SubResource("RectangleShape2D_mhpyn")
@@ -196,5 +185,4 @@ shape = SubResource("RectangleShape2D_8e80f")
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 
 [connection signal="body_entered" from="Static" to="Static" method="_on_body_entered"]
-[connection signal="body_entered" from="Finish_Line" to="Finish_Line" method="_on_body_entered"]
 [connection signal="body_entered" from="Speed" to="Speed" method="_on_body_entered"]
