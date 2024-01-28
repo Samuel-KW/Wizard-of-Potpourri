@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=25 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Script" path="res://Scripts/Static.gd" id="1_xnjg1"]
 [ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
@@ -181,7 +181,7 @@ texture = ExtResource("8_0dfui")
 shape = SubResource("CircleShape2D_tbfhp")
 
 [node name="Speed" type="Area2D" parent="."]
-position = Vector2(1183, 535)
+position = Vector2(1777, 501)
 rotation = -0.963018
 script = ExtResource("9_ldf38")
 direction = Vector2(3000, 0)
