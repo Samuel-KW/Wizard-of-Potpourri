@@ -1,111 +1,128 @@
-[gd_scene load_steps=23 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=18 format=3 uid="uid://8pm0cjiupg3j"]
 
-[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_lu4fg"]
-[ext_resource type="Texture2D" uid="uid://htd2batcda58" path="res://Textures/Toilet Paper/toiletPaper.png" id="2_wtd4x"]
-[ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="5_eeudx"]
-[ext_resource type="Texture2D" uid="uid://cfa6i28eqd8io" path="res://Textures/Ferret/FerretFace/frame0000.png" id="5_xakma"]
-[ext_resource type="Texture2D" uid="uid://cfwmu7nemua7d" path="res://Textures/Ferret/FerretFace/frame0001.png" id="6_njmyh"]
-[ext_resource type="Texture2D" uid="uid://dph043xb02iee" path="res://Textures/Ferret/FerretFace/frame0002.png" id="7_cpyh3"]
-[ext_resource type="Texture2D" uid="uid://cn72c4hy86x6f" path="res://Textures/Ferret/FerretFace/frame0003.png" id="8_aki1a"]
-[ext_resource type="Texture2D" uid="uid://s6mxc13jep2" path="res://Textures/Ferret/FerretFace/frame0004.png" id="9_lt3j0"]
-[ext_resource type="Texture2D" uid="uid://c71h6g5wduwqp" path="res://Textures/Ferret/FerretFace/frame0005.png" id="10_lcbsy"]
-[ext_resource type="Texture2D" uid="uid://bosolsqu2t7dp" path="res://Textures/Ferret/FerretFace/frame0006.png" id="11_ii2xu"]
-[ext_resource type="Texture2D" uid="uid://30snrmn2826w" path="res://Textures/Ferret/FerretFace/frame0007.png" id="12_ofx26"]
-[ext_resource type="Texture2D" uid="uid://csbxquu0tdcy7" path="res://Textures/Ferret/FerretFace/frame0008.png" id="13_fqvk8"]
-[ext_resource type="Texture2D" uid="uid://be315y01wyjee" path="res://Textures/Ferret/FerretFace/frame0009.png" id="14_vuoeb"]
-[ext_resource type="Texture2D" uid="uid://oqdlc66s7brp" path="res://Textures/Ferret/FerretFace/frame0010.png" id="15_4ln3w"]
-[ext_resource type="Texture2D" uid="uid://dt5j34udnjs4l" path="res://Textures/Ferret/FerretFace/frame0011.png" id="16_cyind"]
-[ext_resource type="AudioStream" uid="uid://b24btb05x4uj4" path="res://Audio/pop.mp3" id="16_ycc14"]
-[ext_resource type="Script" path="res://Scripts/Camera.gd" id="17_yfecr"]
+[ext_resource type="Script" path="res://Scripts/Static.gd" id="1_xnjg1"]
+[ext_resource type="Texture2D" uid="uid://bd1h7ivrr1jmm" path="res://icon.svg" id="2_5a3jw"]
+[ext_resource type="Script" path="res://Scripts/Pigeon.gd" id="3_c1s1x"]
+[ext_resource type="Texture2D" uid="uid://c8f8wigqn1x2t" path="res://Textures/umbrellaPidgeon/frame0000.png" id="4_m6dgu"]
+[ext_resource type="Texture2D" uid="uid://chr8hkdqhmsyk" path="res://Textures/umbrellaPidgeon/frame0001.png" id="5_47b67"]
+[ext_resource type="Texture2D" uid="uid://fmkp5cpkyqk1" path="res://Textures/umbrellaPidgeon/frame0002.png" id="6_lbnwx"]
+[ext_resource type="Texture2D" uid="uid://bmv2a4832fhcp" path="res://Textures/umbrellaPidgeon/frame0003.png" id="7_pav1y"]
+[ext_resource type="Texture2D" uid="uid://htd2batcda58" path="res://Textures/Toilet Paper/toiletPaper.png" id="8_0dfui"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7cyr5"]
-radius = 100.005
+[sub_resource type="CircleShape2D" id="CircleShape2D_1t4rj"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ewe1g"]
-rough = true
-bounce = 0.05
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahij6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i60rf"]
-size = Vector2(1198, 94)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp88y"]
+size = Vector2(96, 122)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q2g2j"]
-radius = 100.02
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tp8tm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_71mci"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_xakma")
+"texture": ExtResource("4_m6dgu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_njmyh")
+"texture": ExtResource("5_47b67")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_cpyh3")
+"texture": ExtResource("6_lbnwx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_aki1a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_lt3j0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_lcbsy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_ii2xu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_ofx26")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_fqvk8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_vuoeb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_4ln3w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_cyind")
+"texture": ExtResource("7_pav1y")
 }],
 "loop": true,
-"name": &"Idle",
-"speed": 6.0
+"name": &"walk",
+"speed": 5.0
 }]
 
-[node name="Level 1" type="Node2D"]
-script = ExtResource("1_lu4fg")
+[sub_resource type="CircleShape2D" id="CircleShape2D_lhrl2"]
+radius = 153.013
 
-[node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(352, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhpyn"]
 
-[node name="ToiletPaper" type="StaticBody2D" parent="."]
-position = Vector2(854, 411)
-collision_layer = 2
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q6yjp"]
+rough = true
+bounce = 0.05
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqv35"]
+size = Vector2(1198, 94)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tbfhp"]
+radius = 100.005
+
+[node name="Level" type="Node2D"]
+
+[node name="Dynamic" type="RigidBody2D" parent="."]
+position = Vector2(101, 117)
 collision_mask = 0
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper"]
-position = Vector2(4.095, 15.535)
-scale = Vector2(0.485, 0.485)
-texture = ExtResource("2_wtd4x")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dynamic"]
+shape = SubResource("CircleShape2D_1t4rj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper"]
-shape = SubResource("CircleShape2D_7cyr5")
+[node name="Static" type="Area2D" parent="."]
+position = Vector2(98, 278)
+script = ExtResource("1_xnjg1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static"]
+shape = SubResource("CircleShape2D_ahij6")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(472, 509)
+rotation = 4.71239
+amount = 30
+lifetime = 5.0
+randomness = 0.2
+texture = ExtResource("2_5a3jw")
+spread = 4.32
+initial_velocity_min = 539.55
+initial_velocity_max = 867.55
+angular_velocity_max = 720.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+
+[node name="Pigeon" type="RigidBody2D" parent="."]
+position = Vector2(429, 525)
+collision_layer = 8
+collision_mask = 8
+gravity_scale = 0.0
+script = ExtResource("3_c1s1x")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pigeon"]
+position = Vector2(-6, 51)
+shape = SubResource("RectangleShape2D_dp88y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pigeon"]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_71mci")
+animation = &"walk"
+autoplay = "walk"
+frame = 3
+frame_progress = 0.958099
+flip_h = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pigeon"]
+shape = SubResource("CircleShape2D_lhrl2")
+
+[node name="Finish_Line" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish_Line"]
+shape = SubResource("RectangleShape2D_mhpyn")
 
 [node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(-4, 449)
-rotation = 0.14868
+position = Vector2(1, 658)
+rotation = 8.87215e-05
 collision_mask = 0
-physics_material_override = SubResource("PhysicsMaterial_ewe1g")
+physics_material_override = SubResource("PhysicsMaterial_q6yjp")
 constant_angular_velocity = 0.00261799
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(589, 37)
-shape = SubResource("RectangleShape2D_i60rf")
+shape = SubResource("RectangleShape2D_tqv35")
 
 [node name="ColorRect" type="ColorRect" parent="Ground"]
 offset_left = -8.0
@@ -113,42 +130,18 @@ offset_top = -11.0
 offset_right = 1178.0
 offset_bottom = 82.0
 
-[node name="Ferret" type="CharacterBody2D" parent="."]
-position = Vector2(-263, -41)
-collision_mask = 3
-script = ExtResource("5_eeudx")
+[node name="ToiletPaper" type="StaticBody2D" parent="."]
+position = Vector2(888, 548)
+collision_layer = 2
+collision_mask = 0
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferret"]
-shape = SubResource("CircleShape2D_q2g2j")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ferret"]
-z_index = 1
-position = Vector2(-2.48, 8.635)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_tp8tm")
-animation = &"Idle"
-autoplay = "Idle"
-frame_progress = 0.26848
-
-[node name="Sprite2D" type="Sprite2D" parent="Ferret"]
-position = Vector2(2.846, 18.329)
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper"]
+position = Vector2(4.095, 15.535)
 scale = Vector2(0.485, 0.485)
-texture = ExtResource("2_wtd4x")
+texture = ExtResource("8_0dfui")
 
-[node name="CollectTP" type="AudioStreamPlayer" parent="Ferret"]
-stream = ExtResource("16_ycc14")
-volume_db = 4.335
-pitch_scale = 0.53
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper"]
+shape = SubResource("CircleShape2D_tbfhp")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(568, 224)
-script = ExtResource("17_yfecr")
-
-[node name="ToiletPaperTrail" type="Line2D" parent="."]
-position = Vector2(171, 324)
-points = PackedVector2Array(0, 0)
-width = 4.24
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
+[connection signal="body_entered" from="Static" to="Static" method="_on_body_entered"]

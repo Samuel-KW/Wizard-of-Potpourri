@@ -11,3 +11,6 @@ func _ready():
 
 func _process(delta):
 	self.position = self.position.lerp(Ferret.position, 3 * delta)
+
+func start():
+	self.enabled = true
