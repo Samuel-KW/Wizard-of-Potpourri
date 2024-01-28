@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://8pm0cjiupg3j"]
+[gd_scene load_steps=19 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Script" path="res://Scripts/Static.gd" id="1_xnjg1"]
 [ext_resource type="Texture2D" uid="uid://bd1h7ivrr1jmm" path="res://icon.svg" id="2_5a3jw"]
@@ -8,13 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://fmkp5cpkyqk1" path="res://Textures/umbrellaPidgeon/frame0002.png" id="6_lbnwx"]
 [ext_resource type="Texture2D" uid="uid://bmv2a4832fhcp" path="res://Textures/umbrellaPidgeon/frame0003.png" id="7_pav1y"]
 [ext_resource type="Texture2D" uid="uid://htd2batcda58" path="res://Textures/Toilet Paper/toiletPaper.png" id="8_0dfui"]
+[ext_resource type="Script" path="res://Scripts/SpeedBoost.gd" id="9_ldf38"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1t4rj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ahij6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp88y"]
-size = Vector2(96, 122)
+size = Vector2(345, 485)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_71mci"]
 animations = [{
@@ -36,14 +37,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lhrl2"]
-radius = 153.013
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhpyn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q6yjp"]
-rough = true
-bounce = 0.05
+friction = 0.33
+bounce = 0.73
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jlka1"]
 
@@ -56,11 +54,8 @@ size = Vector2(19380.1, 2907.61)
 [sub_resource type="CircleShape2D" id="CircleShape2D_tbfhp"]
 radius = 100.005
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ydgd8"]
-friction = 0.1
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5l2l"]
-size = Vector2(381, 149)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e80f"]
+size = Vector2(126, 112)
 
 [node name="Level" type="Node2D"]
 
@@ -95,19 +90,20 @@ scale_amount_min = 0.1
 scale_amount_max = 0.2
 
 [node name="Pigeon" type="RigidBody2D" parent="."]
-position = Vector2(429, 525)
+z_index = 2
+position = Vector2(475, 170)
 collision_layer = 8
 collision_mask = 8
+mass = 3.34
 gravity_scale = 0.0
 script = ExtResource("3_c1s1x")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pigeon"]
-position = Vector2(-6, 51)
+position = Vector2(13.5, 232.5)
 shape = SubResource("RectangleShape2D_dp88y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pigeon"]
-scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_71mci")
 animation = &"walk"
 autoplay = "walk"
@@ -115,8 +111,9 @@ frame = 3
 frame_progress = 0.958099
 flip_h = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pigeon"]
-shape = SubResource("CircleShape2D_lhrl2")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pigeon"]
+position = Vector2(314, 28)
+polygon = PackedVector2Array(263, -241, -11, -435, -359, -495, -685, -393, -967, -85)
 
 [node name="Finish_Line" type="Area2D" parent="."]
 
@@ -128,7 +125,6 @@ position = Vector2(1, 658)
 rotation = 8.87215e-05
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_q6yjp")
-constant_angular_velocity = 0.00261799
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_jlka1")
@@ -172,14 +168,19 @@ texture = ExtResource("8_0dfui")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper"]
 shape = SubResource("CircleShape2D_tbfhp")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(785, 207)
-physics_material_override = SubResource("PhysicsMaterial_ydgd8")
-constant_linear_velocity = Vector2(-150, 0)
+[node name="Speed" type="Area2D" parent="."]
+position = Vector2(1122, 551)
+script = ExtResource("9_ldf38")
+metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-902, 617)
-rotation = -0.648893
-shape = SubResource("RectangleShape2D_y5l2l")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Speed"]
+shape = SubResource("RectangleShape2D_8e80f")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 
 [connection signal="body_entered" from="Static" to="Static" method="_on_body_entered"]
+[connection signal="body_entered" from="Speed" to="Speed" method="_on_body_entered"]
