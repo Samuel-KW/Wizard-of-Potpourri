@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://8pm0cjiupg3j"]
+[gd_scene load_steps=22 format=3 uid="uid://8pm0cjiupg3j"]
 
 [ext_resource type="Script" path="res://Scripts/Static.gd" id="1_xnjg1"]
 [ext_resource type="Texture2D" uid="uid://bd1h7ivrr1jmm" path="res://icon.svg" id="2_5a3jw"]
@@ -45,11 +45,22 @@ radius = 153.013
 rough = true
 bounce = 0.05
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jlka1"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqv35"]
 size = Vector2(1198, 94)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_my2ep"]
+size = Vector2(19380.1, 2907.61)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_tbfhp"]
 radius = 100.005
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ydgd8"]
+friction = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5l2l"]
+size = Vector2(381, 149)
 
 [node name="Level" type="Node2D"]
 
@@ -118,17 +129,34 @@ rotation = 8.87215e-05
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_q6yjp")
 constant_angular_velocity = 0.00261799
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+material = SubResource("CanvasItemMaterial_jlka1")
 position = Vector2(589, 37)
 shape = SubResource("RectangleShape2D_tqv35")
+metadata/_edit_group_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Ground"]
-offset_left = -8.0
-offset_top = -11.0
-offset_right = 1178.0
-offset_bottom = 82.0
+[node name="ColorRect" type="ColorRect" parent="Ground/CollisionShape2D"]
+offset_left = -597.0
+offset_top = -48.0
+offset_right = 599.0
+offset_bottom = 47.0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
+material = SubResource("CanvasItemMaterial_jlka1")
+position = Vector2(9689.62, 7034.14)
+shape = SubResource("RectangleShape2D_my2ep")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Ground/CollisionShape2D2"]
+offset_left = -9690.0
+offset_top = -1454.0
+offset_right = 9690.0
+offset_bottom = 1454.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_group_ = true
 
 [node name="ToiletPaper" type="StaticBody2D" parent="."]
 position = Vector2(888, 548)
@@ -143,5 +171,15 @@ texture = ExtResource("8_0dfui")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper"]
 shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(785, 207)
+physics_material_override = SubResource("PhysicsMaterial_ydgd8")
+constant_linear_velocity = Vector2(-150, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-902, 617)
+rotation = -0.648893
+shape = SubResource("RectangleShape2D_y5l2l")
 
 [connection signal="body_entered" from="Static" to="Static" method="_on_body_entered"]
