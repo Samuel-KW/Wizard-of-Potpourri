@@ -120,7 +120,7 @@ animations = [{
 script = ExtResource("1_keup2")
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(254, 23)
+position = Vector2(-350, 218)
 
 [node name="Ferret" type="CharacterBody2D" parent="."]
 collision_mask = 3

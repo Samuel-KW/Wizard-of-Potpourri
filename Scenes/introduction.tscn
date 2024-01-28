@@ -478,7 +478,7 @@ scale = Vector2(0.56, 0.56)
 sprite_frames = SubResource("SpriteFrames_s4y0j")
 animation = &"Bite"
 autoplay = "Bite"
-frame_progress = 0.187015
+frame_progress = 0.765076
 
 [node name="Ferret Fall" type="AnimatedSprite2D" parent="."]
 position = Vector2(1005, 509)
@@ -495,21 +495,21 @@ scale = Vector2(0.325, 0.325)
 sprite_frames = SubResource("SpriteFrames_s1d81")
 animation = &"Dance"
 autoplay = "Dance"
-frame_progress = 0.973552
+frame_progress = 0.551613
 
 [node name="Talking Rat" type="AnimatedSprite2D" parent="."]
 position = Vector2(608, 318)
 sprite_frames = SubResource("SpriteFrames_r77e7")
 animation = &"Talk"
 autoplay = "Talk"
-frame_progress = 0.967786
+frame_progress = 0.545846
 
 [node name="Toilet Paper" type="AnimatedSprite2D" parent="."]
 position = Vector2(909, 383)
 scale = Vector2(0.435, 0.435)
 sprite_frames = SubResource("SpriteFrames_ac5hc")
 animation = &"Shrink"
-frame_progress = 0.634171
+frame_progress = 0.897171
 
 [node name="Ferret" type="AnimatedSprite2D" parent="Toilet Paper"]
 position = Vector2(-8.685, -24.74)
@@ -517,7 +517,7 @@ scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_2xw5a")
 animation = &"Blink"
 autoplay = "Blink"
-frame_progress = 0.256771
+frame_progress = 0.834833
 
 [node name="Umbrella Pidgeon" type="AnimatedSprite2D" parent="."]
 position = Vector2(425, 486)
@@ -525,18 +525,18 @@ scale = Vector2(0.305, 0.305)
 sprite_frames = SubResource("SpriteFrames_wxqlj")
 animation = &"Walk"
 autoplay = "Walk"
-frame_progress = 0.0828593
+frame_progress = 0.66092
 
 [node name="Water" type="AnimatedSprite2D" parent="."]
 position = Vector2(92, 246)
 sprite_frames = SubResource("SpriteFrames_6w5ss")
 animation = &"Effect"
 autoplay = "Effect"
-frame_progress = 0.557398
+frame_progress = 0.872436
 
 [node name="Wizard" type="AnimatedSprite2D" parent="."]
 position = Vector2(961, 276)
 sprite_frames = SubResource("SpriteFrames_t7d2t")
 animation = &"Talk"
 autoplay = "Talk"
-frame_progress = 0.992057
+frame_progress = 0.570117
