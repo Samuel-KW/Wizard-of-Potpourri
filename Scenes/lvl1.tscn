@@ -80,9 +80,9 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ahij6")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(347, 641)
-rotation = 4.71239
-amount = 30
+position = Vector2(1501, 238)
+rotation = 4.04774
+amount = 90
 lifetime = 5.0
 randomness = 0.2
 texture = ExtResource("2_olfqt")
@@ -177,6 +177,7 @@ shape = SubResource("CircleShape2D_tbfhp")
 position = Vector2(1183, 535)
 rotation = -0.963018
 script = ExtResource("9_ldf38")
+direction = Vector2(3000, 0)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Speed"]
@@ -188,9 +189,11 @@ shape = SubResource("RectangleShape2D_8e80f")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(323, 324)
+position = Vector2(811, 654)
 scale = Vector2(1.27344, 1.27344)
 texture = ExtResource("11_idrig")
+region_enabled = true
+region_rect = Rect2(0, 0, 2056, 2056)
 
 [connection signal="body_entered" from="Static" to="Static" method="_on_body_entered"]
 [connection signal="body_entered" from="Speed" to="Speed" method="_on_body_entered"]
