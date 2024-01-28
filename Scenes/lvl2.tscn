@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://8pm0cjiupg3j"]
+[gd_scene load_steps=5 format=3 uid="uid://8pm0cjiupg3j"]
 
 [ext_resource type="Script" path="res://Scripts/Static.gd" id="1_e8bjs"]
+[ext_resource type="Texture2D" uid="uid://bd1h7ivrr1jmm" path="res://icon.svg" id="2_ltsdk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1t4rj"]
 
@@ -25,15 +26,17 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ahij6")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(377, 376)
+position = Vector2(472, 509)
 rotation = 4.71239
-amount = 16
-lifetime = 3.0
-randomness = 0.7
-lifetime_randomness = 0.27
-spread = 7.2
+amount = 30
+lifetime = 5.0
+randomness = 0.2
+texture = ExtResource("2_ltsdk")
+spread = 4.32
 initial_velocity_min = 539.55
 initial_velocity_max = 867.55
 angular_velocity_max = 720.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
 
 [connection signal="body_entered" from="Static" to="Static" method="_on_body_entered"]
