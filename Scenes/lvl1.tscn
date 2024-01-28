@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=23 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Script" path="res://Scripts/Static.gd" id="1_xnjg1"]
 [ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bmv2a4832fhcp" path="res://Textures/umbrellaPidgeon/frame0003.png" id="7_pav1y"]
 [ext_resource type="Texture2D" uid="uid://htd2batcda58" path="res://Textures/Toilet Paper/toiletPaper.png" id="8_0dfui"]
 [ext_resource type="Script" path="res://Scripts/SpeedBoost.gd" id="9_ldf38"]
+[ext_resource type="Texture2D" uid="uid://ulmd6kkqrq8y" path="res://Textures/Background/tile_bg.jpg" id="11_idrig"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1t4rj"]
 
@@ -61,6 +62,7 @@ size = Vector2(126, 112)
 [node name="Level" type="Node2D"]
 
 [node name="Dynamic" type="RigidBody2D" parent="."]
+visible = false
 position = Vector2(101, 117)
 collision_mask = 0
 metadata/_edit_group_ = true
@@ -69,6 +71,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_1t4rj")
 
 [node name="Static" type="Area2D" parent="."]
+visible = false
 position = Vector2(98, 278)
 script = ExtResource("1_xnjg1")
 metadata/_edit_group_ = true
@@ -171,7 +174,8 @@ texture = ExtResource("8_0dfui")
 shape = SubResource("CircleShape2D_tbfhp")
 
 [node name="Speed" type="Area2D" parent="."]
-position = Vector2(1531, 433)
+position = Vector2(1183, 535)
+rotation = -0.963018
 script = ExtResource("9_ldf38")
 metadata/_edit_group_ = true
 
@@ -183,6 +187,10 @@ shape = SubResource("RectangleShape2D_8e80f")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(323, 324)
+scale = Vector2(1.27344, 1.27344)
+texture = ExtResource("11_idrig")
 
 [connection signal="body_entered" from="Static" to="Static" method="_on_body_entered"]
 [connection signal="body_entered" from="Speed" to="Speed" method="_on_body_entered"]

@@ -120,10 +120,9 @@ animations = [{
 script = ExtResource("1_keup2")
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(352, 40)
+position = Vector2(254, 23)
 
 [node name="Ferret" type="CharacterBody2D" parent="."]
-position = Vector2(-263, -41)
 collision_mask = 3
 floor_stop_on_slope = false
 floor_max_angle = 0.523599
@@ -154,7 +153,6 @@ volume_db = 4.335
 pitch_scale = 0.53
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(568, 224)
 offset = Vector2(0, -100)
 enabled = false
 script = ExtResource("17_x20qd")
