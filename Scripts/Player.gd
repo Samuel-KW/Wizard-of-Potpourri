@@ -34,6 +34,14 @@ func _process(delta):
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 
-		
-	
-	
+
+func lose_tp():
+	pass
+
+
+func _on_body_entered(body):
+	print("Yuh") # Replace with function body.
+	$Collect_TP.play()
+	$CollisionShape2D.disable = true
+	$ToiletPaper.visible = false
+	$ToiletPaper.die()

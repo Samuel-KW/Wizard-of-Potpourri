@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=10 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_lu4fg"]
 [ext_resource type="Texture2D" uid="uid://c115du5an38cf" path="res://Textures/Ferret/Roll/ferret-roll-0.png" id="1_oeymq"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_t5uxd"]
 [ext_resource type="Texture2D" uid="uid://6w3nk2cpamjp" path="res://Textures/Ferret/Roll/ferret-roll-1.png" id="3_m0qo3"]
-[ext_resource type="Script" path="res://Scripts/ToiletPaper.gd" id="4_jqae8"]
 [ext_resource type="Texture2D" uid="uid://i2gunfiueu1h" path="res://Textures/Toilet Paper/toilet-paper-0.png" id="5_aqudc"]
+[ext_resource type="AudioStream" uid="uid://cd4586ma3lgx6" path="res://Audio/picking up paper.wav" id="7_waiod"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rrw0a"]
 animations = [{
@@ -24,26 +24,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_6f1nm"]
 radius = 24.4182
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dldff"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_aqudc")
-}],
-"loop": true,
-"name": &"Effect",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ykgw4"]
-radius = 23.8909
+[sub_resource type="CircleShape2D" id="CircleShape2D_7cyr5"]
+radius = 109.554
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource("1_lu4fg")
 
 [node name="Player" type="Area2D" parent="."]
 position = Vector2(55, 691)
-collision_mask = 0
 script = ExtResource("1_t5uxd")
 metadata/_edit_group_ = true
 
@@ -58,24 +46,21 @@ flip_h = true
 position = Vector2(-0.925, -1.115)
 shape = SubResource("CircleShape2D_6f1nm")
 
-[node name="ToiletPaper" type="RigidBody2D" parent="."]
-position = Vector2(480, 455)
-collision_mask = 0
-gravity_scale = 0.0
-script = ExtResource("4_jqae8")
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ToiletPaper"]
-scale = Vector2(0.205, 0.205)
-sprite_frames = SubResource("SpriteFrames_dldff")
-animation = &"Effect"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper"]
-position = Vector2(-0.89, -1.21)
-shape = SubResource("CircleShape2D_ykgw4")
+[node name="Collect_TP" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("7_waiod")
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(265, 484)
 
+[node name="ToiletPaper" type="StaticBody2D" parent="."]
+position = Vector2(613, 483)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper"]
+position = Vector2(2, 2)
+texture = ExtResource("5_aqudc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper"]
+shape = SubResource("CircleShape2D_7cyr5")
+
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
-[connection signal="body_entered" from="ToiletPaper" to="ToiletPaper" method="_on_body_entered"]
