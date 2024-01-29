@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=27 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Script" path="res://Scripts/Static.gd" id="1_xnjg1"]
 [ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
@@ -58,7 +58,13 @@ size = Vector2(2294, 94)
 size = Vector2(19380.1, 2907.61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mjhn"]
-size = Vector2(2855.95, 4578.01)
+size = Vector2(2462.81, 12722)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krg8u"]
+size = Vector2(22986, 2523.45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dddo2"]
+size = Vector2(3586.73, 10287.9)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tbfhp"]
 radius = 100.005
@@ -159,7 +165,7 @@ region_rect = Rect2(0, 0, 2294.94, 93)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_jlka1")
-position = Vector2(9689.62, 7034.14)
+position = Vector2(9538.62, 7034.15)
 shape = SubResource("RectangleShape2D_my2ep")
 metadata/_edit_group_ = true
 
@@ -173,11 +179,28 @@ size_flags_vertical = 3
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground"]
-position = Vector2(4336.25, 2804.62)
+position = Vector2(-1379.4, 2047.13)
 shape = SubResource("RectangleShape2D_1mjhn")
 
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground"]
+position = Vector2(11341.9, -3055.01)
+shape = SubResource("RectangleShape2D_krg8u")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground"]
+position = Vector2(21033.7, 3352.1)
+shape = SubResource("RectangleShape2D_dddo2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2(2159, 5.80847)
+polygon = PackedVector2Array(-13.0011, -12.9988, 2359.46, 5206.79, 2233.46, 5145.8, -13.9928, 81.0012)
+
+[node name="Polygon2D" type="Polygon2D" parent="Ground/CollisionPolygon2D"]
+position = Vector2(-47.9977, 26.0043)
+color = Color(0.129412, 0.129412, 0.129412, 1)
+polygon = PackedVector2Array(33.9968, -36.0031, 2406.46, 5178.79, 2282.45, 5117.8, 34.005, 55.9969)
+
 [node name="ToiletPaper" type="StaticBody2D" parent="."]
-position = Vector2(1714, -216)
+position = Vector2(1588, 515)
 collision_layer = 2
 collision_mask = 0
 metadata/_edit_group_ = true
@@ -188,6 +211,62 @@ scale = Vector2(0.485, 0.485)
 texture = ExtResource("8_0dfui")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper2" type="StaticBody2D" parent="."]
+position = Vector2(2205, 1445)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper2"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper2"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper3" type="StaticBody2D" parent="."]
+position = Vector2(2790, 2699)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper3"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper3"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper4" type="StaticBody2D" parent="."]
+position = Vector2(3303, 3867)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper4"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper4"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper5" type="StaticBody2D" parent="."]
+position = Vector2(3824, 5005)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper5"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper5"]
 shape = SubResource("CircleShape2D_tbfhp")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
