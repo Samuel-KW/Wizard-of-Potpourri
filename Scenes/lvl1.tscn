@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=53 format=3 uid="uid://1fj3mb5a36i8"]
-=======
-[gd_scene load_steps=58 format=3 uid="uid://1fj3mb5a36i8"]
->>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
 [ext_resource type="Script" path="res://Scripts/Pigeon.gd" id="3_c1s1x"]
@@ -41,12 +37,6 @@
 [ext_resource type="Texture2D" uid="uid://dr4wrdn4nj1mo" path="res://Textures/wizard/frame0008.png" id="34_oha4x"]
 [ext_resource type="Texture2D" uid="uid://0m3s3o0shkop" path="res://Textures/wizard/frame0009.png" id="35_80mm2"]
 [ext_resource type="Texture2D" uid="uid://dgkf40bpketfu" path="res://Textures/wizard/frame0010.png" id="36_7st8w"]
-<<<<<<< Updated upstream
-=======
-[ext_resource type="Script" path="res://Scripts/Goose.gd" id="38_0y2aw"]
-[ext_resource type="Texture2D" uid="uid://bgq6107opj6v" path="res://Textures/dainty goose/frame0000.png" id="39_3boam"]
-[ext_resource type="Texture2D" uid="uid://bsw6dyk20timq" path="res://Textures/dainty goose/frame0001.png" id="40_g42uu"]
->>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp88y"]
 size = Vector2(345, 485)
@@ -199,37 +189,21 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu360"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_m80ff"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("39_3boam")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_g42uu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 6.0
-}]
-
 [node name="Level" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(425, -670)
-rotation = 4.72427
-amount = 120
-lifetime = 2.5
+position = Vector2(1501, 238)
+rotation = 4.04774
+amount = 90
+lifetime = 5.0
 randomness = 0.2
 texture = ExtResource("2_olfqt")
-spread = 35.92
+spread = 4.32
 initial_velocity_min = 539.55
 initial_velocity_max = 867.55
-angular_velocity_min = -3.0
-angular_velocity_max = 3.0
-scale_amount_max = 2.0
+angular_velocity_max = 720.0
+scale_amount_min = 0.4
+scale_amount_max = 0.6
 script = ExtResource("3_vuann")
 
 [node name="Pigeon" type="RigidBody2D" parent="."]
@@ -413,7 +387,7 @@ texture = ExtResource("8_0dfui")
 shape = SubResource("CircleShape2D_tbfhp")
 
 [node name="ToiletPaper7" type="StaticBody2D" parent="."]
-position = Vector2(7192, 6119)
+position = Vector2(7071, 6119)
 collision_layer = 2
 collision_mask = 0
 metadata/_edit_group_ = true
@@ -525,10 +499,10 @@ rotation = -0.158382
 texture = ExtResource("19_7pypj")
 
 [node name="Label" type="Label" parent="Talking Rat"]
-offset_left = -896.078
+offset_left = -860.784
 offset_top = -472.549
-offset_right = -256.078
-offset_bottom = 4.45099
+offset_right = -280.784
+offset_bottom = -55.5491
 theme_override_font_sizes/font_size = 41
 text = "Poor ferret, I cannot help
 you in the little predicament
@@ -536,8 +510,7 @@ you have found yourself in.
 
 But I know of one that is
 capable of assisting all feeble
-bodies such as ours. His name is 
-Ratticus Magus."
+bodies such as ours."
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -553,7 +526,7 @@ region_rect = Rect2(0, 0, 20000, 10000)
 
 [node name="Rat Dance" type="AnimatedSprite2D" parent="."]
 z_index = 3
-position = Vector2(11087.5, 5906)
+position = Vector2(8109.5, 5857)
 scale = Vector2(0.495, 0.495)
 sprite_frames = SubResource("SpriteFrames_hcuaf")
 animation = &"Dance"
@@ -571,7 +544,7 @@ text = "Hey ;)"
 
 [node name="Rat Dance2" type="AnimatedSprite2D" parent="."]
 z_index = -1
-position = Vector2(11502.5, 5887)
+position = Vector2(8524.5, 5838)
 scale = Vector2(0.43, 0.43)
 sprite_frames = SubResource("SpriteFrames_hcuaf")
 animation = &"Dance"
@@ -581,11 +554,7 @@ offset = Vector2(2.715, 0)
 flip_h = true
 
 [node name="Wizard" type="AnimatedSprite2D" parent="."]
-<<<<<<< Updated upstream
 position = Vector2(10348, 5988)
-=======
-position = Vector2(15876, 6042)
->>>>>>> Stashed changes
 scale = Vector2(1.03, 1.03)
 sprite_frames = SubResource("SpriteFrames_p16kl")
 animation = &"Talk"
@@ -609,27 +578,8 @@ Should you dare to beseech my aid, prepare yourself for a storm of indignant squ
 
 So, adventurer, if you seek the assistance of Ratticus Magus, be warned that you tread on perilous ground. My fur bristles with the arrogance of a thousand wizards, and my reluctance to help is as immutable as the laws of magic themselves. Turn away, and let my whiskers disappear into the shadows, for you shall find no ally in this wizard rat."
 
-<<<<<<< Updated upstream
-=======
-I am capable of what you wish,
-however, I've had a long and
-grueling day. Maybe later."
-
->>>>>>> Stashed changes
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_4stnj")
 autoplay = true
-
-[node name="Goose" type="RigidBody2D" parent="."]
-position = Vector2(8360, 5699)
-script = ExtResource("38_0y2aw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goose"]
-shape = SubResource("RectangleShape2D_lu360")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Goose"]
-position = Vector2(-167, 138)
-sprite_frames = SubResource("SpriteFrames_m80ff")
-autoplay = "default"
 
 [connection signal="body_entered" from="Pigeon/Speed" to="Pigeon/Speed" method="_on_body_entered"]
