@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 
-var direction = 1
+@export var direction = 1
 
 const SPEED = 100
 
@@ -13,10 +13,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	
-	if position.x > 800:
+	if position.x > 1200:
 		direction = -1
 		$AnimatedSprite2D.flip_h = false
-	elif position.x < 500:
+	elif position.x < 200:
 		direction = 1
 		$AnimatedSprite2D.flip_h = true
 	position.x += direction * delta * SPEED

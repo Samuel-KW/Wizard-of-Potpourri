@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=25 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Script" path="res://Scripts/Static.gd" id="1_xnjg1"]
 [ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
@@ -40,6 +40,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e80f"]
+size = Vector2(166, 467)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhpyn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q6yjp"]
@@ -49,7 +52,7 @@ bounce = 0.73
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jlka1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqv35"]
-size = Vector2(1198, 94)
+size = Vector2(2294, 94)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_my2ep"]
 size = Vector2(19380.1, 2907.61)
@@ -59,9 +62,6 @@ size = Vector2(2855.95, 4578.01)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tbfhp"]
 radius = 100.005
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e80f"]
-size = Vector2(126, 112)
 
 [node name="Level" type="Node2D"]
 
@@ -100,7 +100,7 @@ script = ExtResource("3_vuann")
 
 [node name="Pigeon" type="RigidBody2D" parent="."]
 z_index = 2
-position = Vector2(475, 170)
+position = Vector2(728, 170)
 collision_layer = 8
 collision_mask = 8
 mass = 3.34
@@ -124,20 +124,30 @@ flip_h = true
 position = Vector2(314, 28)
 polygon = PackedVector2Array(263, -241, -11, -435, -359, -495, -685, -393, -967, -85)
 
+[node name="Speed" type="Area2D" parent="Pigeon"]
+position = Vector2(23, 393)
+rotation = -1.57079
+script = ExtResource("9_ldf38")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pigeon/Speed"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_8e80f")
+
 [node name="Finish_Line" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish_Line"]
 shape = SubResource("RectangleShape2D_mhpyn")
 
 [node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(1, 658)
+position = Vector2(-444, 656)
 rotation = 8.87215e-05
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_q6yjp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_jlka1")
-position = Vector2(589, 37)
+position = Vector2(998.002, 39.9163)
 shape = SubResource("RectangleShape2D_tqv35")
 metadata/_edit_group_ = true
 
@@ -145,7 +155,7 @@ metadata/_edit_group_ = true
 texture_repeat = 2
 texture = ExtResource("9_l2dih")
 region_enabled = true
-region_rect = Rect2(0, 0, 1196.79, 93)
+region_rect = Rect2(0, 0, 2294.94, 93)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_jlka1")
@@ -180,27 +190,17 @@ texture = ExtResource("8_0dfui")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper"]
 shape = SubResource("CircleShape2D_tbfhp")
 
-[node name="Speed" type="Area2D" parent="."]
-position = Vector2(1183, 535)
-rotation = -0.963018
-script = ExtResource("9_ldf38")
-direction = Vector2(3000, 0)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Speed"]
-shape = SubResource("RectangleShape2D_8e80f")
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(1989, 1900)
+position = Vector2(9693, 2694)
 scale = Vector2(1.27344, 1.27344)
 texture = ExtResource("11_idrig")
 region_enabled = true
-region_rect = Rect2(0, 0, 4112, 4112)
+region_rect = Rect2(0, 0, 20000, 10000)
 
 [connection signal="body_entered" from="Static" to="Static" method="_on_body_entered"]
-[connection signal="body_entered" from="Speed" to="Speed" method="_on_body_entered"]
+[connection signal="body_entered" from="Pigeon/Speed" to="Pigeon/Speed" method="_on_body_entered"]

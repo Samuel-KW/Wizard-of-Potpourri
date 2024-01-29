@@ -71,7 +71,7 @@ func roll_paper(delta):
 		velocity.x *= -1
 		paper_length = MAX_LENGTH
 		
-	update_paper_visual()
+	#update_paper_visual()
 	
 	
 func wind_paper(delta):
@@ -82,7 +82,7 @@ func wind_paper(delta):
 	if paper_length < 0:
 		paper_length = 0;
 		
-	update_paper_visual()
+	#update_paper_visual()
 	
 func update_paper_visual():
 	var pts = TRAIL_ELEMENT.get_points()
