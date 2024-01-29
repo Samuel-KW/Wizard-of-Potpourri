@@ -93,7 +93,7 @@ func update_paper_visual():
 	var percent = paper_length / MAX_LENGTH
 	var frames = 11
 	
-	var radii = [100, 90, 85, 80, 75, 70, 60, 50, 45, 40, 35, 30]
+	var radii = [100, 90, 85, 75, 63, 65, 50, 45, 45, 40, 35, 30]
 	
 	var frame = int (percent * frames)
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=53 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
 [ext_resource type="Script" path="res://Scripts/Pigeon.gd" id="3_c1s1x"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://7hnk1b46svat" path="res://Textures/rat dance/frame0002.png" id="23_o4710"]
 [ext_resource type="Texture2D" uid="uid://sqos8f7iws48" path="res://Textures/rat dance/frame0003.png" id="24_m6wk6"]
 [ext_resource type="Texture2D" uid="uid://drk5napebvo12" path="res://Textures/rat dance/frame0004.png" id="25_1wqoo"]
+[ext_resource type="AudioStream" uid="uid://btavjha6li7gg" path="res://Audio/lobbby.mp3" id="26_4stnj"]
 [ext_resource type="Texture2D" uid="uid://buemx4o08dmfx" path="res://Textures/wizard/frame0000.png" id="26_xcqxb"]
 [ext_resource type="Texture2D" uid="uid://bwop5si53yuiq" path="res://Textures/wizard/frame0001.png" id="27_fwxux"]
 [ext_resource type="Texture2D" uid="uid://blm2f2sda8knn" path="res://Textures/wizard/frame0002.png" id="28_6v2od"]
@@ -36,7 +37,6 @@
 [ext_resource type="Texture2D" uid="uid://dr4wrdn4nj1mo" path="res://Textures/wizard/frame0008.png" id="34_oha4x"]
 [ext_resource type="Texture2D" uid="uid://0m3s3o0shkop" path="res://Textures/wizard/frame0009.png" id="35_80mm2"]
 [ext_resource type="Texture2D" uid="uid://dgkf40bpketfu" path="res://Textures/wizard/frame0010.png" id="36_7st8w"]
-[ext_resource type="AudioStream" uid="uid://btavjha6li7gg" path="res://Audio/lobbby.mp3" id="26_4stnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp88y"]
 size = Vector2(345, 485)
@@ -303,7 +303,7 @@ color = Color(0.129412, 0.129412, 0.129412, 1)
 polygon = PackedVector2Array(33.9968, -36.0031, 2406.46, 5178.79, 2282.45, 5117.8, 34.005, 55.9969)
 
 [node name="ToiletPaper" type="StaticBody2D" parent="."]
-position = Vector2(1588, 541)
+position = Vector2(1526, 545)
 collision_layer = 2
 collision_mask = 0
 metadata/_edit_group_ = true
@@ -414,6 +414,76 @@ texture = ExtResource("8_0dfui")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper8"]
 shape = SubResource("CircleShape2D_tbfhp")
 
+[node name="ToiletPaper9" type="StaticBody2D" parent="."]
+position = Vector2(10739, 6121)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper9"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper9"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper10" type="StaticBody2D" parent="."]
+position = Vector2(12133, 6126)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper10"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper10"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper11" type="StaticBody2D" parent="."]
+position = Vector2(13346, 6132)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper11"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper11"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper12" type="StaticBody2D" parent="."]
+position = Vector2(14879, 6132)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper12"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper12"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper13" type="StaticBody2D" parent="."]
+position = Vector2(16212, 6117)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper13"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper13"]
+shape = SubResource("CircleShape2D_tbfhp")
+
 [node name="Talking Rat" type="AnimatedSprite2D" parent="."]
 position = Vector2(5023, 6155)
 scale = Vector2(0.51, 0.51)
@@ -484,7 +554,7 @@ offset = Vector2(2.715, 0)
 flip_h = true
 
 [node name="Wizard" type="AnimatedSprite2D" parent="."]
-position = Vector2(11263, 6015)
+position = Vector2(10348, 5988)
 scale = Vector2(1.03, 1.03)
 sprite_frames = SubResource("SpriteFrames_p16kl")
 animation = &"Talk"
@@ -492,16 +562,22 @@ autoplay = "Talk"
 frame_progress = 0.748911
 
 [node name="Label" type="Label" parent="Wizard"]
-offset_left = -892.233
-offset_top = -246.602
-offset_right = -280.233
-offset_bottom = 50.398
-theme_override_font_sizes/font_size = 41
-text = "It is I, the great wizard.
+offset_left = 333.981
+offset_top = -470.874
+offset_right = 5855.98
+offset_bottom = 134.126
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 32
+text = "Greetings, mere mortal! I am Ratticus Magus, the most illustrious and enigmatic wizard rat to ever scurry through the realms of magic. My fur is woven with the threads of ancient spells, and my whiskers tingle with the energies of the arcane. But alas, do not think for a moment that I shall willingly lend my magical prowess to the likes of you, a mere ferret!
 
-I am capable of what you wish,
-however, I've had a long and
-grueling day. Maybe later."
+I have spent countless rodent years honing my magical abilities in the hidden nooks and crannies of the mystical world. My tiny paws have delved into the secrets of the cosmos, and my keen senses have deciphered the whispers of the magical winds. I have no interest in assisting a bumbling ferret on their quest for glory or treasure.
+
+Why, you may ask, should a wizard rat of such grandeur stoop to aid a creature so devoid of fur and grace? The answer lies in the very nature of my rodent soul. I am an independent spirit, a whiskered wanderer, and I care not for the troubles of the world beyond my labyrinthine abode.
+
+Should you dare to beseech my aid, prepare yourself for a storm of indignant squeaks and a chorus of disdainful tail flicks. My magical abilities shall remain locked away in the recesses of my mystical sanctum, far from the reach of your ferret paws.
+
+So, adventurer, if you seek the assistance of Ratticus Magus, be warned that you tread on perilous ground. My fur bristles with the arrogance of a thousand wizards, and my reluctance to help is as immutable as the laws of magic themselves. Turn away, and let my whiskers disappear into the shadows, for you shall find no ally in this wizard rat."
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_4stnj")
 autoplay = true
