@@ -250,7 +250,7 @@ color = Color(0.129412, 0.129412, 0.129412, 1)
 polygon = PackedVector2Array(33.9968, -36.0031, 2406.46, 5178.79, 2282.45, 5117.8, 34.005, 55.9969)
 
 [node name="ToiletPaper" type="StaticBody2D" parent="."]
-position = Vector2(1588, 515)
+position = Vector2(1588, 541)
 collision_layer = 2
 collision_mask = 0
 metadata/_edit_group_ = true
@@ -317,6 +317,48 @@ scale = Vector2(0.485, 0.485)
 texture = ExtResource("8_0dfui")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper5"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper6" type="StaticBody2D" parent="."]
+position = Vector2(5797, 6130)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper6"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper6"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper7" type="StaticBody2D" parent="."]
+position = Vector2(7071, 6119)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper7"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper7"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper8" type="StaticBody2D" parent="."]
+position = Vector2(8815, 6128)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper8"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper8"]
 shape = SubResource("CircleShape2D_tbfhp")
 
 [node name="Talking Rat" type="AnimatedSprite2D" parent="."]
