@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var START_POS;
 var screen_size # Size of the game window.
 var RADIUS = 30
 
@@ -19,14 +20,15 @@ var TRAIL_ELEMENT;
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func start(pos):
+	START_POS = pos
 	position = pos
-	RADIUS = $CollisionShape2D.shape.radius
-	TRAIL_ELEMENT.position = position
+	TRAIL_ELEMENT.position = pos
 	show()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var root_node = get_parent()
+	RADIUS = $CollisionShape2D.shape.radius
 	TRAIL_ELEMENT = root_node.get_node("ToiletPaperTrail")
 	
 	screen_size = get_viewport_rect().size
@@ -47,7 +49,7 @@ func _physics_process(delta):
 	if velocity.x > 0.1:
 		roll_paper(delta)
 	elif velocity.x < -0.1:
-		wind_paper(delta)
+		pass#wind_paper(delta)
 
 	move_and_slide()
 	
@@ -61,7 +63,7 @@ func _physics_process(delta):
 			collider.queue_free()
 			paper_length = 0
 
-	self.rotation += (velocity.x * delta) / RADIUS
+	self.rotation += (velocity.x * delta) / $CollisionShape2D.shape.radius
 	
 func roll_paper(delta):
 	is_rolling = true
@@ -71,7 +73,7 @@ func roll_paper(delta):
 		velocity.x *= -1
 		paper_length = MAX_LENGTH
 		
-	#update_paper_visual()
+	update_paper_visual()
 	
 	
 func wind_paper(delta):
@@ -82,13 +84,26 @@ func wind_paper(delta):
 	if paper_length < 0:
 		paper_length = 0;
 		
-	#update_paper_visual()
+	update_paper_visual()
 	
 func update_paper_visual():
-	var pts = TRAIL_ELEMENT.get_points()
-	var dist = position.distance_to(pts[pts.size() - 1])
-	if is_rolling and dist > 5:
-		TRAIL_ELEMENT.add_point(TRAIL_ELEMENT.position - position)
-		#paper_length += dist
+	var percent = paper_length / MAX_LENGTH
+	var frames = 11
+	
+	var radii = [100, 90, 80, 70, 60, 50, 40, 30, 25, 15, 10, 5]
+	
+	var frame = int (percent * frames)
+	
+	$CollisionShape2D.shape.radius = radii[frame]
+	$TP_Sprite.frame = frame
+	
+	if frame == frames:
+		self.position = START_POS
+		paper_length = 0
+		$TP_Sprite.frame = 0
+		$CollisionShape2D.shape.radius = RADIUS
+		velocity = Vector2(0, 0)
+		
+	
 	
 

@@ -123,6 +123,7 @@ script = ExtResource("1_keup2")
 position = Vector2(-350, 218)
 
 [node name="Ferret" type="CharacterBody2D" parent="."]
+z_index = 1
 collision_mask = 3
 floor_stop_on_slope = false
 floor_max_angle = 0.523599

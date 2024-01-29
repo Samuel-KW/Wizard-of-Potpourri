@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=40 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
 [ext_resource type="Script" path="res://Scripts/Pigeon.gd" id="3_c1s1x"]
@@ -318,8 +318,9 @@ texture = ExtResource("8_0dfui")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper5"]
 shape = SubResource("CircleShape2D_tbfhp")
+
 [node name="Talking Rat" type="AnimatedSprite2D" parent="."]
-position = Vector2(1835, 6156)
+position = Vector2(5023, 6155)
 scale = Vector2(0.51, 0.51)
 sprite_frames = SubResource("SpriteFrames_il2ke")
 animation = &"Talk"
@@ -359,15 +360,25 @@ region_enabled = true
 region_rect = Rect2(0, 0, 20000, 10000)
 
 [node name="Rat Dance" type="AnimatedSprite2D" parent="."]
-position = Vector2(6623, 5863)
+z_index = 3
+position = Vector2(8109.5, 5857)
 scale = Vector2(0.495, 0.495)
 sprite_frames = SubResource("SpriteFrames_hcuaf")
 animation = &"Dance"
 autoplay = "Dance"
 frame_progress = 0.0871006
 
+[node name="Label" type="Label" parent="Rat Dance"]
+offset_left = -326.263
+offset_top = 70.7074
+offset_right = 253.737
+offset_bottom = 487.707
+theme_override_font_sizes/font_size = 41
+text = "Hey ;)"
+
 [node name="Rat Dance2" type="AnimatedSprite2D" parent="."]
-position = Vector2(7038, 5844)
+z_index = -1
+position = Vector2(8524.5, 5838)
 scale = Vector2(0.43, 0.43)
 sprite_frames = SubResource("SpriteFrames_hcuaf")
 animation = &"Dance"
