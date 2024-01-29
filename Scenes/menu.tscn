@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Start_Button.gd" id="1_86j56"]
 [ext_resource type="Script" path="res://Scripts/Credit_Button.gd" id="2_dvma6"]
 [ext_resource type="Script" path="res://Scripts/Exit_Button.gd" id="3_3nnim"]
-[ext_resource type="AudioStream" uid="uid://b56ynnx4jkymm" path="res://Audio/scary_BGM.mp3" id="4_ruw5u"]
+[ext_resource type="AudioStream" uid="uid://bh8wkl20jauxm" path="res://Audio/poop_music.mp3" id="4_g1p6x"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -75,7 +75,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Start_Menu_Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_ruw5u")
+stream = ExtResource("4_g1p6x")
 volume_db = 0.01
 pitch_scale = 0.75
 autoplay = true
