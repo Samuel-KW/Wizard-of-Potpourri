@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=41 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
 [ext_resource type="Script" path="res://Scripts/Pigeon.gd" id="3_c1s1x"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://7hnk1b46svat" path="res://Textures/rat dance/frame0002.png" id="23_o4710"]
 [ext_resource type="Texture2D" uid="uid://sqos8f7iws48" path="res://Textures/rat dance/frame0003.png" id="24_m6wk6"]
 [ext_resource type="Texture2D" uid="uid://drk5napebvo12" path="res://Textures/rat dance/frame0004.png" id="25_1wqoo"]
+[ext_resource type="AudioStream" uid="uid://btavjha6li7gg" path="res://Audio/lobbby.mp3" id="26_4stnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp88y"]
 size = Vector2(345, 485)
@@ -428,5 +429,9 @@ autoplay = "Dance"
 frame_progress = 0.512739
 offset = Vector2(2.715, 0)
 flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_4stnj")
+autoplay = true
 
 [connection signal="body_entered" from="Pigeon/Speed" to="Pigeon/Speed" method="_on_body_entered"]
