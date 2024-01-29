@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=52 format=3 uid="uid://1fj3mb5a36i8"]
 
 [ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
 [ext_resource type="Script" path="res://Scripts/Pigeon.gd" id="3_c1s1x"]
@@ -25,6 +25,17 @@
 [ext_resource type="Texture2D" uid="uid://7hnk1b46svat" path="res://Textures/rat dance/frame0002.png" id="23_o4710"]
 [ext_resource type="Texture2D" uid="uid://sqos8f7iws48" path="res://Textures/rat dance/frame0003.png" id="24_m6wk6"]
 [ext_resource type="Texture2D" uid="uid://drk5napebvo12" path="res://Textures/rat dance/frame0004.png" id="25_1wqoo"]
+[ext_resource type="Texture2D" uid="uid://buemx4o08dmfx" path="res://Textures/wizard/frame0000.png" id="26_xcqxb"]
+[ext_resource type="Texture2D" uid="uid://bwop5si53yuiq" path="res://Textures/wizard/frame0001.png" id="27_fwxux"]
+[ext_resource type="Texture2D" uid="uid://blm2f2sda8knn" path="res://Textures/wizard/frame0002.png" id="28_6v2od"]
+[ext_resource type="Texture2D" uid="uid://b44tbtfcrhxay" path="res://Textures/wizard/frame0003.png" id="29_l6jy4"]
+[ext_resource type="Texture2D" uid="uid://6lbnhakqploo" path="res://Textures/wizard/frame0004.png" id="30_qf1aw"]
+[ext_resource type="Texture2D" uid="uid://dy4ufqih8grrv" path="res://Textures/wizard/frame0005.png" id="31_nhj1d"]
+[ext_resource type="Texture2D" uid="uid://dr3pxpimmqbj2" path="res://Textures/wizard/frame0006.png" id="32_ukvom"]
+[ext_resource type="Texture2D" uid="uid://clm7yyuch4iaj" path="res://Textures/wizard/frame0007.png" id="33_ed57e"]
+[ext_resource type="Texture2D" uid="uid://dr4wrdn4nj1mo" path="res://Textures/wizard/frame0008.png" id="34_oha4x"]
+[ext_resource type="Texture2D" uid="uid://0m3s3o0shkop" path="res://Textures/wizard/frame0009.png" id="35_80mm2"]
+[ext_resource type="Texture2D" uid="uid://dgkf40bpketfu" path="res://Textures/wizard/frame0010.png" id="36_7st8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp88y"]
 size = Vector2(345, 485)
@@ -133,6 +144,47 @@ animations = [{
 }],
 "loop": true,
 "name": &"Dance",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p16kl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_xcqxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fwxux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6v2od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_l6jy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_qf1aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_nhj1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ukvom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ed57e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_oha4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_80mm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_7st8w")
+}],
+"loop": true,
+"name": &"Talk",
 "speed": 6.0
 }]
 
@@ -408,13 +460,14 @@ scale = Vector2(0.495, 0.495)
 sprite_frames = SubResource("SpriteFrames_hcuaf")
 animation = &"Dance"
 autoplay = "Dance"
-frame_progress = 0.0871006
+frame_progress = 0.313197
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="Rat Dance"]
-offset_left = -326.263
-offset_top = 70.7074
-offset_right = 253.737
-offset_bottom = 487.707
+offset_left = -560.606
+offset_top = 22.2225
+offset_right = 19.3936
+offset_bottom = 439.222
 theme_override_font_sizes/font_size = 41
 text = "Hey ;)"
 
@@ -425,8 +478,28 @@ scale = Vector2(0.43, 0.43)
 sprite_frames = SubResource("SpriteFrames_hcuaf")
 animation = &"Dance"
 autoplay = "Dance"
-frame_progress = 0.512739
+frame_progress = 0.838039
 offset = Vector2(2.715, 0)
 flip_h = true
+
+[node name="Wizard" type="AnimatedSprite2D" parent="."]
+position = Vector2(11263, 6015)
+scale = Vector2(1.03, 1.03)
+sprite_frames = SubResource("SpriteFrames_p16kl")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.748911
+
+[node name="Label" type="Label" parent="Wizard"]
+offset_left = -892.233
+offset_top = -246.602
+offset_right = -280.233
+offset_bottom = 50.398
+theme_override_font_sizes/font_size = 41
+text = "It is I, the great wizard.
+
+I am capable of what you wish,
+however, I've had a long and
+grueling day. Maybe later."
 
 [connection signal="body_entered" from="Pigeon/Speed" to="Pigeon/Speed" method="_on_body_entered"]

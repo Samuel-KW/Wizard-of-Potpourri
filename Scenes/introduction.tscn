@@ -2,19 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://ulmd6kkqrq8y" path="res://Textures/Background/tile_bg.jpg" id="1_2r51n"]
 [ext_resource type="Texture2D" uid="uid://d16vdpf27uvh" path="res://Textures/the great wizard.png" id="2_rrp5f"]
-[ext_resource type="Texture2D" uid="uid://dfbjx5mruufb0" path="res://Textures/crocodile/frame0000.png" id="2_vi747"]
-[ext_resource type="Texture2D" uid="uid://dxbma3nupf6mf" path="res://Textures/crocodile/frame0001.png" id="3_nfbrv"]
-[ext_resource type="Texture2D" uid="uid://btuc8st8dtlq0" path="res://Textures/crocodile/frame0002.png" id="4_auk75"]
-[ext_resource type="Texture2D" uid="uid://csl5aw38xgky4" path="res://Textures/crocodile/frame0003.png" id="5_k8wpo"]
-[ext_resource type="Texture2D" uid="uid://dstwfwfelg8uo" path="res://Textures/crocodile/frame0004.png" id="6_crix0"]
-[ext_resource type="Texture2D" uid="uid://by3rtxifjuimt" path="res://Textures/crocodile/frame0005.png" id="7_n7chn"]
-[ext_resource type="Texture2D" uid="uid://dy2iwnpxlneon" path="res://Textures/crocodile/frame0006.png" id="8_c0sa3"]
-[ext_resource type="Texture2D" uid="uid://b36e553lcn0i4" path="res://Textures/crocodile/frame0007.png" id="9_chrrh"]
-[ext_resource type="Texture2D" uid="uid://to0d6hy6ns6b" path="res://Textures/crocodile/frame0008.png" id="10_0g806"]
-[ext_resource type="Texture2D" uid="uid://dreuovf8r6rd2" path="res://Textures/crocodile/frame0009.png" id="11_4dogm"]
-[ext_resource type="Texture2D" uid="uid://olp238jjkx2n" path="res://Textures/crocodile/frame0010.png" id="12_t3q8m"]
-[ext_resource type="Texture2D" uid="uid://bu7tcst5lsb6s" path="res://Textures/crocodile/frame0011.png" id="13_w34of"]
-[ext_resource type="Texture2D" uid="uid://ullj5je61bgk" path="res://Textures/crocodile/frame0012.png" id="14_4qlel"]
+[ext_resource type="Texture2D" uid="uid://djdgwamdvs43v" path="res://Textures/crocodile/frame0000.png" id="2_vi747"]
+[ext_resource type="Texture2D" uid="uid://c4m3ddknb4nra" path="res://Textures/crocodile/frame0001.png" id="3_nfbrv"]
+[ext_resource type="Texture2D" uid="uid://dskdc4psfdqrm" path="res://Textures/crocodile/frame0002.png" id="4_auk75"]
+[ext_resource type="Texture2D" uid="uid://d3a43trk4ybiq" path="res://Textures/crocodile/frame0003.png" id="5_k8wpo"]
+[ext_resource type="Texture2D" uid="uid://by0t51ij10mee" path="res://Textures/crocodile/frame0004.png" id="6_crix0"]
+[ext_resource type="Texture2D" uid="uid://chgrtc00i3c77" path="res://Textures/crocodile/frame0005.png" id="7_n7chn"]
+[ext_resource type="Texture2D" uid="uid://cvile4xavrrh1" path="res://Textures/crocodile/frame0006.png" id="8_c0sa3"]
+[ext_resource type="Texture2D" uid="uid://de4fva73ymxds" path="res://Textures/crocodile/frame0007.png" id="9_chrrh"]
+[ext_resource type="Texture2D" uid="uid://byi7iegyd8dv7" path="res://Textures/crocodile/frame0008.png" id="10_0g806"]
+[ext_resource type="Texture2D" uid="uid://dy1wbtijl7gab" path="res://Textures/crocodile/frame0009.png" id="11_4dogm"]
+[ext_resource type="Texture2D" uid="uid://h4kvbeuu44gb" path="res://Textures/crocodile/frame0010.png" id="12_t3q8m"]
+[ext_resource type="Texture2D" uid="uid://cby43qe2vcbfl" path="res://Textures/crocodile/frame0011.png" id="13_w34of"]
+[ext_resource type="Texture2D" uid="uid://dblvfr368uue1" path="res://Textures/crocodile/frame0012.png" id="14_4qlel"]
 [ext_resource type="Texture2D" uid="uid://cfa6i28eqd8io" path="res://Textures/Ferret/FerretFace/frame0000.png" id="15_qytah"]
 [ext_resource type="Texture2D" uid="uid://cfwmu7nemua7d" path="res://Textures/Ferret/FerretFace/frame0001.png" id="16_okrya"]
 [ext_resource type="Texture2D" uid="uid://dph043xb02iee" path="res://Textures/Ferret/FerretFace/frame0002.png" id="17_pvw6f"]
@@ -490,6 +490,7 @@ frame = 23
 frame_progress = 1.0
 
 [node name="Rat Dance" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(182, 326)
 scale = Vector2(0.325, 0.325)
 sprite_frames = SubResource("SpriteFrames_s1d81")
@@ -498,6 +499,7 @@ autoplay = "Dance"
 frame_progress = 0.551613
 
 [node name="Talking Rat" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(608, 318)
 sprite_frames = SubResource("SpriteFrames_r77e7")
 animation = &"Talk"
@@ -505,6 +507,7 @@ autoplay = "Talk"
 frame_progress = 0.545846
 
 [node name="Toilet Paper" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(909, 383)
 scale = Vector2(0.435, 0.435)
 sprite_frames = SubResource("SpriteFrames_ac5hc")
@@ -520,6 +523,7 @@ autoplay = "Blink"
 frame_progress = 0.834833
 
 [node name="Umbrella Pidgeon" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(425, 486)
 scale = Vector2(0.305, 0.305)
 sprite_frames = SubResource("SpriteFrames_wxqlj")
@@ -535,8 +539,11 @@ autoplay = "Effect"
 frame_progress = 0.872436
 
 [node name="Wizard" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(961, 276)
 sprite_frames = SubResource("SpriteFrames_t7d2t")
 animation = &"Talk"
 autoplay = "Talk"
 frame_progress = 0.570117
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
