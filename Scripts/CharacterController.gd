@@ -61,7 +61,10 @@ func _physics_process(delta):
 		if collider.collision_layer == 2:
 			$CollectTP.play()
 			collider.queue_free()
+			
 			paper_length = 0
+			$TP_Sprite.frame = 0
+			$CollisionShape2D.shape.radius = RADIUS
 
 	self.rotation += (velocity.x * delta) / $CollisionShape2D.shape.radius
 	
@@ -90,7 +93,7 @@ func update_paper_visual():
 	var percent = paper_length / MAX_LENGTH
 	var frames = 11
 	
-	var radii = [100, 90, 80, 70, 60, 50, 40, 30, 25, 15, 10, 5]
+	var radii = [100, 90, 85, 80, 75, 70, 60, 50, 45, 40, 35, 30]
 	
 	var frame = int (percent * frames)
 	
