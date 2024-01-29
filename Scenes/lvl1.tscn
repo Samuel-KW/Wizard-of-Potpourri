@@ -264,7 +264,7 @@ texture = ExtResource("8_0dfui")
 shape = SubResource("CircleShape2D_tbfhp")
 
 [node name="ToiletPaper2" type="StaticBody2D" parent="."]
-position = Vector2(2205, 1445)
+position = Vector2(2080, 1149)
 collision_layer = 2
 collision_mask = 0
 metadata/_edit_group_ = true
@@ -278,7 +278,7 @@ texture = ExtResource("8_0dfui")
 shape = SubResource("CircleShape2D_tbfhp")
 
 [node name="ToiletPaper3" type="StaticBody2D" parent="."]
-position = Vector2(2790, 2699)
+position = Vector2(2696, 2479)
 collision_layer = 2
 collision_mask = 0
 metadata/_edit_group_ = true
@@ -292,7 +292,7 @@ texture = ExtResource("8_0dfui")
 shape = SubResource("CircleShape2D_tbfhp")
 
 [node name="ToiletPaper4" type="StaticBody2D" parent="."]
-position = Vector2(3303, 3867)
+position = Vector2(3303, 3827)
 collision_layer = 2
 collision_mask = 0
 metadata/_edit_group_ = true
