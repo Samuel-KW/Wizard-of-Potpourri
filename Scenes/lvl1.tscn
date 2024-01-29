@@ -1,6 +1,5 @@
-[gd_scene load_steps=27 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=38 format=3 uid="uid://1fj3mb5a36i8"]
 
-[ext_resource type="Script" path="res://Scripts/Static.gd" id="1_xnjg1"]
 [ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
 [ext_resource type="Script" path="res://Scripts/Pigeon.gd" id="3_c1s1x"]
 [ext_resource type="Script" path="res://Scripts/WaterParticles.gd" id="3_vuann"]
@@ -11,11 +10,21 @@
 [ext_resource type="Texture2D" uid="uid://htd2batcda58" path="res://Textures/Toilet Paper/toiletPaper.png" id="8_0dfui"]
 [ext_resource type="Texture2D" uid="uid://5fqo3mgumryn" path="res://Textures/Background/tile_ground.png" id="9_l2dih"]
 [ext_resource type="Script" path="res://Scripts/SpeedBoost.gd" id="9_ldf38"]
+[ext_resource type="Texture2D" uid="uid://ch5qnvaqctu86" path="res://Textures/talking rat/frame0000.png" id="11_582s5"]
 [ext_resource type="Texture2D" uid="uid://ulmd6kkqrq8y" path="res://Textures/Background/tile_bg.jpg" id="11_idrig"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1t4rj"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ahij6"]
+[ext_resource type="Texture2D" uid="uid://dxyys8ikkoeo" path="res://Textures/talking rat/frame0001.png" id="12_sjhae"]
+[ext_resource type="Texture2D" uid="uid://d04kaogcuw3j3" path="res://Textures/talking rat/frame0002.png" id="13_l21eb"]
+[ext_resource type="Texture2D" uid="uid://bsvtjeqbvjbe0" path="res://Textures/talking rat/frame0003.png" id="14_y3lwi"]
+[ext_resource type="Texture2D" uid="uid://bwebj6x35aod6" path="res://Textures/talking rat/frame0004.png" id="15_we78a"]
+[ext_resource type="Texture2D" uid="uid://cjm0vcqg82nj2" path="res://Textures/talking rat/frame0005.png" id="16_0rd76"]
+[ext_resource type="Texture2D" uid="uid://cgxxwlgaggnhw" path="res://Textures/talking rat/frame0006.png" id="17_fg5sg"]
+[ext_resource type="Texture2D" uid="uid://btiwhfh7qshg0" path="res://Textures/talking rat/frame0007.png" id="18_2kiw6"]
+[ext_resource type="Texture2D" uid="uid://d16vdpf27uvh" path="res://Textures/the great wizard.png" id="19_7pypj"]
+[ext_resource type="Texture2D" uid="uid://djxhoqqi0d5fh" path="res://Textures/rat dance/frame0000.png" id="21_lvgc6"]
+[ext_resource type="Texture2D" uid="uid://cfi4qxu36or5g" path="res://Textures/rat dance/frame0001.png" id="22_eq8in"]
+[ext_resource type="Texture2D" uid="uid://7hnk1b46svat" path="res://Textures/rat dance/frame0002.png" id="23_o4710"]
+[ext_resource type="Texture2D" uid="uid://sqos8f7iws48" path="res://Textures/rat dance/frame0003.png" id="24_m6wk6"]
+[ext_resource type="Texture2D" uid="uid://drk5napebvo12" path="res://Textures/rat dance/frame0004.png" id="25_1wqoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp88y"]
 size = Vector2(345, 485)
@@ -69,25 +78,65 @@ size = Vector2(3586.73, 10287.9)
 [sub_resource type="CircleShape2D" id="CircleShape2D_tbfhp"]
 radius = 100.005
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_il2ke"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_582s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sjhae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_l21eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_y3lwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_we78a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0rd76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fg5sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2kiw6")
+}],
+"loop": true,
+"name": &"Talk",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hcuaf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_lvgc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_eq8in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_o4710")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_m6wk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1wqoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1wqoo")
+}],
+"loop": true,
+"name": &"Dance",
+"speed": 6.0
+}]
+
 [node name="Level" type="Node2D"]
-
-[node name="Dynamic" type="RigidBody2D" parent="."]
-visible = false
-position = Vector2(101, 117)
-collision_mask = 0
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dynamic"]
-shape = SubResource("CircleShape2D_1t4rj")
-
-[node name="Static" type="Area2D" parent="."]
-visible = false
-position = Vector2(98, 278)
-script = ExtResource("1_xnjg1")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Static"]
-shape = SubResource("CircleShape2D_ahij6")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(1501, 238)
@@ -153,7 +202,7 @@ physics_material_override = SubResource("PhysicsMaterial_q6yjp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_jlka1")
-position = Vector2(998.002, 39.9163)
+position = Vector2(992.004, 39.9119)
 shape = SubResource("RectangleShape2D_tqv35")
 metadata/_edit_group_ = true
 
@@ -176,6 +225,7 @@ offset_right = 9690.0
 offset_bottom = 1454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+color = Color(0.247059, 0.247059, 0.247059, 1)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground"]
@@ -268,6 +318,33 @@ texture = ExtResource("8_0dfui")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper5"]
 shape = SubResource("CircleShape2D_tbfhp")
+[node name="Talking Rat" type="AnimatedSprite2D" parent="."]
+position = Vector2(1835, 6156)
+scale = Vector2(0.51, 0.51)
+sprite_frames = SubResource("SpriteFrames_il2ke")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.258624
+
+[node name="FrenchGirl" type="Sprite2D" parent="Talking Rat"]
+z_index = -1
+position = Vector2(707.843, -347.059)
+rotation = -0.158382
+texture = ExtResource("19_7pypj")
+
+[node name="Label" type="Label" parent="Talking Rat"]
+offset_left = -860.784
+offset_top = -472.549
+offset_right = -280.784
+offset_bottom = -55.5491
+theme_override_font_sizes/font_size = 41
+text = "Poor ferret, I cannot help
+you in the little predicament
+you have found yourself in.
+
+But I know of one that is
+capable of assisting all feeble
+bodies such as ours."
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -281,5 +358,22 @@ texture = ExtResource("11_idrig")
 region_enabled = true
 region_rect = Rect2(0, 0, 20000, 10000)
 
-[connection signal="body_entered" from="Static" to="Static" method="_on_body_entered"]
+[node name="Rat Dance" type="AnimatedSprite2D" parent="."]
+position = Vector2(6623, 5863)
+scale = Vector2(0.495, 0.495)
+sprite_frames = SubResource("SpriteFrames_hcuaf")
+animation = &"Dance"
+autoplay = "Dance"
+frame_progress = 0.0871006
+
+[node name="Rat Dance2" type="AnimatedSprite2D" parent="."]
+position = Vector2(7038, 5844)
+scale = Vector2(0.43, 0.43)
+sprite_frames = SubResource("SpriteFrames_hcuaf")
+animation = &"Dance"
+autoplay = "Dance"
+frame_progress = 0.512739
+offset = Vector2(2.715, 0)
+flip_h = true
+
 [connection signal="body_entered" from="Pigeon/Speed" to="Pigeon/Speed" method="_on_body_entered"]
