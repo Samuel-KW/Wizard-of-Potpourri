@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://dr4wrdn4nj1mo" path="res://Textures/wizard/frame0008.png" id="34_oha4x"]
 [ext_resource type="Texture2D" uid="uid://0m3s3o0shkop" path="res://Textures/wizard/frame0009.png" id="35_80mm2"]
 [ext_resource type="Texture2D" uid="uid://dgkf40bpketfu" path="res://Textures/wizard/frame0010.png" id="36_7st8w"]
+[ext_resource type="AudioStream" uid="uid://btavjha6li7gg" path="res://Audio/lobbby.mp3" id="26_4stnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp88y"]
 size = Vector2(345, 485)
@@ -501,5 +502,8 @@ text = "It is I, the great wizard.
 I am capable of what you wish,
 however, I've had a long and
 grueling day. Maybe later."
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_4stnj")
+autoplay = true
 
 [connection signal="body_entered" from="Pigeon/Speed" to="Pigeon/Speed" method="_on_body_entered"]
