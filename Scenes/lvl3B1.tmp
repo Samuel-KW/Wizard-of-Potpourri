@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=3 uid="uid://1fj3mb5a36i8"]
+
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_lu4fg"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_t5uxd"]
+[ext_resource type="Texture2D" uid="uid://i2gunfiueu1h" path="res://Textures/Toilet Paper/toilet-paper-0.png" id="5_aqudc"]
+[ext_resource type="AudioStream" uid="uid://cd4586ma3lgx6" path="res://Audio/picking up paper.wav" id="7_waiod"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rrw0a"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6f1nm"]
+radius = 24.4182
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7cyr5"]
+radius = 109.554
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ewe1g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i60rf"]
+size = Vector2(1198, 94)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7gml4"]
+radius = 26.0192
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vc3ar"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmilg"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Level 1" type="Node2D"]
+script = ExtResource("1_lu4fg")
+
+[node name="Player" type="Area2D" parent="."]
+visible = false
+position = Vector2(143, 281)
+script = ExtResource("1_t5uxd")
+speed = null
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+scale = Vector2(0.21, 0.21)
+sprite_frames = SubResource("SpriteFrames_rrw0a")
+animation = &"Idle"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-0.925, -1.115)
+shape = SubResource("CircleShape2D_6f1nm")
+
+[node name="Collect_TP" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("7_waiod")
+
+[node name="ToiletPaper" type="StaticBody2D" parent="."]
+position = Vector2(561, 351)
+collision_layer = 0
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper"]
+position = Vector2(2, 2)
+texture = ExtResource("5_aqudc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper"]
+shape = SubResource("CircleShape2D_7cyr5")
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(226, 436)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(-4, 449)
+rotation = 0.14868
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_ewe1g")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(589, 37)
+shape = SubResource("RectangleShape2D_i60rf")
+
+[node name="ColorRect" type="ColorRect" parent="Ground"]
+offset_left = -8.0
+offset_top = -11.0
+offset_right = 1178.0
+offset_bottom = 82.0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(46, 146)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_7gml4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_vc3ar")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_qmilg")
+animation = &"Idle"

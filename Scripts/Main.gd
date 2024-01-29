@@ -1,7 +1,9 @@
 extends Node2D
 
 func _ready():
-	new_game()
+	if get_node_or_null("/root/Level"):
+		new_game()
 
 func new_game():
-	$Player.start($StartPosition.position)
+	$Ferret.start($StartPosition.position)
+	$Camera.start()

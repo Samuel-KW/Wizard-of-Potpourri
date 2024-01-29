@@ -1,0 +1,166 @@
+[gd_scene load_steps=31 format=3 uid="uid://cfj7l0krpvxdk"]
+
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_keup2"]
+[ext_resource type="Script" path="res://Scripts/CharacterController.gd" id="2_x20jw"]
+[ext_resource type="Texture2D" uid="uid://cfa6i28eqd8io" path="res://Textures/Ferret/FerretFace/frame0000.png" id="3_ohtcf"]
+[ext_resource type="Texture2D" uid="uid://cfwmu7nemua7d" path="res://Textures/Ferret/FerretFace/frame0001.png" id="4_xmjm4"]
+[ext_resource type="Texture2D" uid="uid://dph043xb02iee" path="res://Textures/Ferret/FerretFace/frame0002.png" id="5_c62mm"]
+[ext_resource type="Texture2D" uid="uid://cn72c4hy86x6f" path="res://Textures/Ferret/FerretFace/frame0003.png" id="6_7dhd8"]
+[ext_resource type="Texture2D" uid="uid://s6mxc13jep2" path="res://Textures/Ferret/FerretFace/frame0004.png" id="7_lafh0"]
+[ext_resource type="Texture2D" uid="uid://c71h6g5wduwqp" path="res://Textures/Ferret/FerretFace/frame0005.png" id="8_33i8e"]
+[ext_resource type="Texture2D" uid="uid://bosolsqu2t7dp" path="res://Textures/Ferret/FerretFace/frame0006.png" id="9_aqw00"]
+[ext_resource type="Texture2D" uid="uid://30snrmn2826w" path="res://Textures/Ferret/FerretFace/frame0007.png" id="10_nfa70"]
+[ext_resource type="Texture2D" uid="uid://csbxquu0tdcy7" path="res://Textures/Ferret/FerretFace/frame0008.png" id="11_ywkil"]
+[ext_resource type="Texture2D" uid="uid://be315y01wyjee" path="res://Textures/Ferret/FerretFace/frame0009.png" id="12_d35ok"]
+[ext_resource type="Texture2D" uid="uid://oqdlc66s7brp" path="res://Textures/Ferret/FerretFace/frame0010.png" id="13_6t2m6"]
+[ext_resource type="Texture2D" uid="uid://dt5j34udnjs4l" path="res://Textures/Ferret/FerretFace/frame0011.png" id="14_1tk3g"]
+[ext_resource type="Texture2D" uid="uid://cxan00s0lr7wj" path="res://Textures/tp roll/frame0000.png" id="15_r8w28"]
+[ext_resource type="AudioStream" uid="uid://b24btb05x4uj4" path="res://Audio/pop.mp3" id="16_6dwti"]
+[ext_resource type="Texture2D" uid="uid://lc0m2ovtkgux" path="res://Textures/tp roll/frame0001.png" id="16_bhfc1"]
+[ext_resource type="Texture2D" uid="uid://ba280lta267m3" path="res://Textures/tp roll/frame0002.png" id="17_ksm50"]
+[ext_resource type="Script" path="res://Scripts/Camera.gd" id="17_x20qd"]
+[ext_resource type="Texture2D" uid="uid://celn8qmbfcvw6" path="res://Textures/tp roll/frame0003.png" id="18_egqwe"]
+[ext_resource type="Texture2D" uid="uid://cnspgg2wkbplp" path="res://Textures/tp roll/frame0004.png" id="19_xd8oh"]
+[ext_resource type="Texture2D" uid="uid://bvgqjs1cugfhd" path="res://Textures/tp roll/frame0005.png" id="20_ka4m8"]
+[ext_resource type="Texture2D" uid="uid://bowag76d4kog3" path="res://Textures/tp roll/frame0006.png" id="21_8smso"]
+[ext_resource type="Texture2D" uid="uid://bav1r012du1mm" path="res://Textures/tp roll/frame0007.png" id="22_27aas"]
+[ext_resource type="Texture2D" uid="uid://c6ee1it2c8eh7" path="res://Textures/tp roll/frame0008.png" id="23_jnw3g"]
+[ext_resource type="Texture2D" uid="uid://dwsau22rmugpd" path="res://Textures/tp roll/frame0009.png" id="24_ykvhs"]
+[ext_resource type="Texture2D" uid="uid://ned7myhirna8" path="res://Textures/tp roll/frame0010.png" id="25_bk8c2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q2g2j"]
+radius = 100.02
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tp8tm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ohtcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xmjm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c62mm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7dhd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lafh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_33i8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_aqw00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nfa70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ywkil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_d35ok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6t2m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1tk3g")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvbuc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_r8w28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bhfc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ksm50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_egqwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xd8oh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ka4m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8smso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_27aas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jnw3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ykvhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_bk8c2")
+}],
+"loop": false,
+"name": &"Size",
+"speed": 5.0
+}]
+
+[node name="Level 1" type="Node2D"]
+script = ExtResource("1_keup2")
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(254, 23)
+
+[node name="Ferret" type="CharacterBody2D" parent="."]
+collision_mask = 3
+floor_stop_on_slope = false
+floor_max_angle = 0.523599
+script = ExtResource("2_x20jw")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ferret"]
+shape = SubResource("CircleShape2D_q2g2j")
+
+[node name="Ferret_Sprite" type="AnimatedSprite2D" parent="Ferret"]
+z_index = 1
+position = Vector2(-2.48, 8.635)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_tp8tm")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.26848
+
+[node name="TP_Sprite" type="AnimatedSprite2D" parent="Ferret"]
+position = Vector2(5.6, 15.985)
+scale = Vector2(0.48, 0.48)
+sprite_frames = SubResource("SpriteFrames_lvbuc")
+animation = &"Size"
+
+[node name="CollectTP" type="AudioStreamPlayer" parent="Ferret"]
+stream = ExtResource("16_6dwti")
+volume_db = 4.335
+pitch_scale = 0.53
+
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2(0, -100)
+enabled = false
+script = ExtResource("17_x20qd")
+
+[node name="ToiletPaperTrail" type="Line2D" parent="."]
+position = Vector2(171, 324)
+points = PackedVector2Array(0, 0)
+width = 4.24
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2

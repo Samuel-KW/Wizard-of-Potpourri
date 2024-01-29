@@ -1,66 +1,585 @@
-[gd_scene load_steps=10 format=3 uid="uid://1fj3mb5a36i8"]
+[gd_scene load_steps=53 format=3 uid="uid://1fj3mb5a36i8"]
 
-[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_lu4fg"]
-[ext_resource type="Texture2D" uid="uid://c115du5an38cf" path="res://Textures/Ferret/Roll/ferret-roll-0.png" id="1_oeymq"]
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_t5uxd"]
-[ext_resource type="Texture2D" uid="uid://6w3nk2cpamjp" path="res://Textures/Ferret/Roll/ferret-roll-1.png" id="3_m0qo3"]
-[ext_resource type="Texture2D" uid="uid://i2gunfiueu1h" path="res://Textures/Toilet Paper/toilet-paper-0.png" id="5_aqudc"]
-[ext_resource type="AudioStream" uid="uid://cd4586ma3lgx6" path="res://Audio/picking up paper.wav" id="7_waiod"]
+[ext_resource type="Texture2D" uid="uid://dkvw76rqu2hwh" path="res://Textures/water/frame0000.png" id="2_olfqt"]
+[ext_resource type="Script" path="res://Scripts/Pigeon.gd" id="3_c1s1x"]
+[ext_resource type="Script" path="res://Scripts/WaterParticles.gd" id="3_vuann"]
+[ext_resource type="Texture2D" uid="uid://c8f8wigqn1x2t" path="res://Textures/umbrellaPidgeon/frame0000.png" id="4_m6dgu"]
+[ext_resource type="Texture2D" uid="uid://chr8hkdqhmsyk" path="res://Textures/umbrellaPidgeon/frame0001.png" id="5_47b67"]
+[ext_resource type="Texture2D" uid="uid://fmkp5cpkyqk1" path="res://Textures/umbrellaPidgeon/frame0002.png" id="6_lbnwx"]
+[ext_resource type="Texture2D" uid="uid://bmv2a4832fhcp" path="res://Textures/umbrellaPidgeon/frame0003.png" id="7_pav1y"]
+[ext_resource type="Texture2D" uid="uid://htd2batcda58" path="res://Textures/Toilet Paper/toiletPaper.png" id="8_0dfui"]
+[ext_resource type="Texture2D" uid="uid://5fqo3mgumryn" path="res://Textures/Background/tile_ground.png" id="9_l2dih"]
+[ext_resource type="Script" path="res://Scripts/SpeedBoost.gd" id="9_ldf38"]
+[ext_resource type="Texture2D" uid="uid://ch5qnvaqctu86" path="res://Textures/talking rat/frame0000.png" id="11_582s5"]
+[ext_resource type="Texture2D" uid="uid://ulmd6kkqrq8y" path="res://Textures/Background/tile_bg.jpg" id="11_idrig"]
+[ext_resource type="Texture2D" uid="uid://dxyys8ikkoeo" path="res://Textures/talking rat/frame0001.png" id="12_sjhae"]
+[ext_resource type="Texture2D" uid="uid://d04kaogcuw3j3" path="res://Textures/talking rat/frame0002.png" id="13_l21eb"]
+[ext_resource type="Texture2D" uid="uid://bsvtjeqbvjbe0" path="res://Textures/talking rat/frame0003.png" id="14_y3lwi"]
+[ext_resource type="Texture2D" uid="uid://bwebj6x35aod6" path="res://Textures/talking rat/frame0004.png" id="15_we78a"]
+[ext_resource type="Texture2D" uid="uid://cjm0vcqg82nj2" path="res://Textures/talking rat/frame0005.png" id="16_0rd76"]
+[ext_resource type="Texture2D" uid="uid://cgxxwlgaggnhw" path="res://Textures/talking rat/frame0006.png" id="17_fg5sg"]
+[ext_resource type="Texture2D" uid="uid://btiwhfh7qshg0" path="res://Textures/talking rat/frame0007.png" id="18_2kiw6"]
+[ext_resource type="Texture2D" uid="uid://d16vdpf27uvh" path="res://Textures/the great wizard.png" id="19_7pypj"]
+[ext_resource type="Texture2D" uid="uid://djxhoqqi0d5fh" path="res://Textures/rat dance/frame0000.png" id="21_lvgc6"]
+[ext_resource type="Texture2D" uid="uid://cfi4qxu36or5g" path="res://Textures/rat dance/frame0001.png" id="22_eq8in"]
+[ext_resource type="Texture2D" uid="uid://7hnk1b46svat" path="res://Textures/rat dance/frame0002.png" id="23_o4710"]
+[ext_resource type="Texture2D" uid="uid://sqos8f7iws48" path="res://Textures/rat dance/frame0003.png" id="24_m6wk6"]
+[ext_resource type="Texture2D" uid="uid://drk5napebvo12" path="res://Textures/rat dance/frame0004.png" id="25_1wqoo"]
+[ext_resource type="AudioStream" uid="uid://btavjha6li7gg" path="res://Audio/lobbby.mp3" id="26_4stnj"]
+[ext_resource type="Texture2D" uid="uid://buemx4o08dmfx" path="res://Textures/wizard/frame0000.png" id="26_xcqxb"]
+[ext_resource type="Texture2D" uid="uid://bwop5si53yuiq" path="res://Textures/wizard/frame0001.png" id="27_fwxux"]
+[ext_resource type="Texture2D" uid="uid://blm2f2sda8knn" path="res://Textures/wizard/frame0002.png" id="28_6v2od"]
+[ext_resource type="Texture2D" uid="uid://b44tbtfcrhxay" path="res://Textures/wizard/frame0003.png" id="29_l6jy4"]
+[ext_resource type="Texture2D" uid="uid://6lbnhakqploo" path="res://Textures/wizard/frame0004.png" id="30_qf1aw"]
+[ext_resource type="Texture2D" uid="uid://dy4ufqih8grrv" path="res://Textures/wizard/frame0005.png" id="31_nhj1d"]
+[ext_resource type="Texture2D" uid="uid://dr3pxpimmqbj2" path="res://Textures/wizard/frame0006.png" id="32_ukvom"]
+[ext_resource type="Texture2D" uid="uid://clm7yyuch4iaj" path="res://Textures/wizard/frame0007.png" id="33_ed57e"]
+[ext_resource type="Texture2D" uid="uid://dr4wrdn4nj1mo" path="res://Textures/wizard/frame0008.png" id="34_oha4x"]
+[ext_resource type="Texture2D" uid="uid://0m3s3o0shkop" path="res://Textures/wizard/frame0009.png" id="35_80mm2"]
+[ext_resource type="Texture2D" uid="uid://dgkf40bpketfu" path="res://Textures/wizard/frame0010.png" id="36_7st8w"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rrw0a"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp88y"]
+size = Vector2(345, 485)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_71mci"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_oeymq")
+"texture": ExtResource("4_m6dgu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_m0qo3")
+"texture": ExtResource("5_47b67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lbnwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pav1y")
 }],
 "loop": true,
-"name": &"Roll",
+"name": &"walk",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6f1nm"]
-radius = 24.4182
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e80f"]
+size = Vector2(166, 467)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7cyr5"]
-radius = 109.554
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhpyn"]
 
-[node name="Level 1" type="Node2D"]
-script = ExtResource("1_lu4fg")
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q6yjp"]
+friction = 0.33
+bounce = 0.73
 
-[node name="Player" type="Area2D" parent="."]
-position = Vector2(55, 691)
-script = ExtResource("1_t5uxd")
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jlka1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqv35"]
+size = Vector2(2294, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_my2ep"]
+size = Vector2(19380.1, 2907.61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mjhn"]
+size = Vector2(2462.81, 12722)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krg8u"]
+size = Vector2(22986, 2523.45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dddo2"]
+size = Vector2(3586.73, 10287.9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tbfhp"]
+radius = 100.005
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_il2ke"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_582s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sjhae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_l21eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_y3lwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_we78a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0rd76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fg5sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2kiw6")
+}],
+"loop": true,
+"name": &"Talk",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hcuaf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_lvgc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_eq8in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_o4710")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_m6wk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1wqoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1wqoo")
+}],
+"loop": true,
+"name": &"Dance",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p16kl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_xcqxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fwxux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6v2od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_l6jy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_qf1aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_nhj1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ukvom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ed57e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_oha4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_80mm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_7st8w")
+}],
+"loop": true,
+"name": &"Talk",
+"speed": 6.0
+}]
+
+[node name="Level" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(1501, 238)
+rotation = 4.04774
+amount = 90
+lifetime = 5.0
+randomness = 0.2
+texture = ExtResource("2_olfqt")
+spread = 4.32
+initial_velocity_min = 539.55
+initial_velocity_max = 867.55
+angular_velocity_max = 720.0
+scale_amount_min = 0.4
+scale_amount_max = 0.6
+script = ExtResource("3_vuann")
+
+[node name="Pigeon" type="RigidBody2D" parent="."]
+z_index = 2
+position = Vector2(728, 170)
+collision_layer = 8
+collision_mask = 8
+mass = 3.34
+gravity_scale = 0.0
+script = ExtResource("3_c1s1x")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-scale = Vector2(0.21, 0.21)
-sprite_frames = SubResource("SpriteFrames_rrw0a")
-animation = &"Roll"
-frame_progress = 0.401095
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pigeon"]
+position = Vector2(13.5, 232.5)
+shape = SubResource("RectangleShape2D_dp88y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pigeon"]
+sprite_frames = SubResource("SpriteFrames_71mci")
+animation = &"walk"
+autoplay = "walk"
+frame = 3
+frame_progress = 0.958099
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-0.925, -1.115)
-shape = SubResource("CircleShape2D_6f1nm")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pigeon"]
+position = Vector2(314, 28)
+polygon = PackedVector2Array(263, -241, -11, -435, -359, -495, -685, -393, -967, -85)
 
-[node name="Collect_TP" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource("7_waiod")
+[node name="Speed" type="Area2D" parent="Pigeon"]
+position = Vector2(23, 393)
+rotation = -1.57079
+script = ExtResource("9_ldf38")
+metadata/_edit_group_ = true
 
-[node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(265, 484)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pigeon/Speed"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_8e80f")
+
+[node name="Finish_Line" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish_Line"]
+shape = SubResource("RectangleShape2D_mhpyn")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(-444, 656)
+rotation = 8.87215e-05
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_q6yjp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+material = SubResource("CanvasItemMaterial_jlka1")
+position = Vector2(992.004, 39.9119)
+shape = SubResource("RectangleShape2D_tqv35")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/CollisionShape2D"]
+texture_repeat = 2
+texture = ExtResource("9_l2dih")
+region_enabled = true
+region_rect = Rect2(0, 0, 2294.94, 93)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
+material = SubResource("CanvasItemMaterial_jlka1")
+position = Vector2(9538.62, 7034.15)
+shape = SubResource("RectangleShape2D_my2ep")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Ground/CollisionShape2D2"]
+offset_left = -9690.0
+offset_top = -1454.0
+offset_right = 9690.0
+offset_bottom = 1454.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.247059, 0.247059, 0.247059, 1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground"]
+position = Vector2(-1379.4, 2047.13)
+shape = SubResource("RectangleShape2D_1mjhn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground"]
+position = Vector2(11341.9, -3055.01)
+shape = SubResource("RectangleShape2D_krg8u")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground"]
+position = Vector2(21033.7, 3352.1)
+shape = SubResource("RectangleShape2D_dddo2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2(2159, 5.80847)
+polygon = PackedVector2Array(-13.0011, -12.9988, 2359.46, 5206.79, 2233.46, 5145.8, -13.9928, 81.0012)
+
+[node name="Polygon2D" type="Polygon2D" parent="Ground/CollisionPolygon2D"]
+position = Vector2(-47.9977, 26.0043)
+color = Color(0.129412, 0.129412, 0.129412, 1)
+polygon = PackedVector2Array(33.9968, -36.0031, 2406.46, 5178.79, 2282.45, 5117.8, 34.005, 55.9969)
 
 [node name="ToiletPaper" type="StaticBody2D" parent="."]
-position = Vector2(613, 483)
+position = Vector2(1526, 545)
+collision_layer = 2
+collision_mask = 0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="ToiletPaper"]
-position = Vector2(2, 2)
-texture = ExtResource("5_aqudc")
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper"]
-shape = SubResource("CircleShape2D_7cyr5")
+shape = SubResource("CircleShape2D_tbfhp")
 
-[connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
+[node name="ToiletPaper2" type="StaticBody2D" parent="."]
+position = Vector2(2080, 1149)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper2"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper2"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper3" type="StaticBody2D" parent="."]
+position = Vector2(2696, 2479)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper3"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper3"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper4" type="StaticBody2D" parent="."]
+position = Vector2(3303, 3827)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper4"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper4"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper5" type="StaticBody2D" parent="."]
+position = Vector2(3824, 5005)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper5"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper5"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper6" type="StaticBody2D" parent="."]
+position = Vector2(5797, 6130)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper6"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper6"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper7" type="StaticBody2D" parent="."]
+position = Vector2(7071, 6119)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper7"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper7"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper8" type="StaticBody2D" parent="."]
+position = Vector2(8815, 6128)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper8"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper8"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper9" type="StaticBody2D" parent="."]
+position = Vector2(10739, 6121)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper9"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper9"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper10" type="StaticBody2D" parent="."]
+position = Vector2(12133, 6126)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper10"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper10"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper11" type="StaticBody2D" parent="."]
+position = Vector2(13346, 6132)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper11"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper11"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper12" type="StaticBody2D" parent="."]
+position = Vector2(14879, 6132)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper12"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper12"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="ToiletPaper13" type="StaticBody2D" parent="."]
+position = Vector2(16212, 6117)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ToiletPaper13"]
+position = Vector2(4.095, 15.535)
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("8_0dfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletPaper13"]
+shape = SubResource("CircleShape2D_tbfhp")
+
+[node name="Talking Rat" type="AnimatedSprite2D" parent="."]
+position = Vector2(5023, 6155)
+scale = Vector2(0.51, 0.51)
+sprite_frames = SubResource("SpriteFrames_il2ke")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.258624
+
+[node name="FrenchGirl" type="Sprite2D" parent="Talking Rat"]
+z_index = -1
+position = Vector2(707.843, -347.059)
+rotation = -0.158382
+texture = ExtResource("19_7pypj")
+
+[node name="Label" type="Label" parent="Talking Rat"]
+offset_left = -860.784
+offset_top = -472.549
+offset_right = -280.784
+offset_bottom = -55.5491
+theme_override_font_sizes/font_size = 41
+text = "Poor ferret, I cannot help
+you in the little predicament
+you have found yourself in.
+
+But I know of one that is
+capable of assisting all feeble
+bodies such as ours."
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(9693, 2694)
+scale = Vector2(1.27344, 1.27344)
+texture = ExtResource("11_idrig")
+region_enabled = true
+region_rect = Rect2(0, 0, 20000, 10000)
+
+[node name="Rat Dance" type="AnimatedSprite2D" parent="."]
+z_index = 3
+position = Vector2(8109.5, 5857)
+scale = Vector2(0.495, 0.495)
+sprite_frames = SubResource("SpriteFrames_hcuaf")
+animation = &"Dance"
+autoplay = "Dance"
+frame_progress = 0.313197
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Rat Dance"]
+offset_left = -560.606
+offset_top = 22.2225
+offset_right = 19.3936
+offset_bottom = 439.222
+theme_override_font_sizes/font_size = 41
+text = "Hey ;)"
+
+[node name="Rat Dance2" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(8524.5, 5838)
+scale = Vector2(0.43, 0.43)
+sprite_frames = SubResource("SpriteFrames_hcuaf")
+animation = &"Dance"
+autoplay = "Dance"
+frame_progress = 0.838039
+offset = Vector2(2.715, 0)
+flip_h = true
+
+[node name="Wizard" type="AnimatedSprite2D" parent="."]
+position = Vector2(10348, 5988)
+scale = Vector2(1.03, 1.03)
+sprite_frames = SubResource("SpriteFrames_p16kl")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.748911
+
+[node name="Label" type="Label" parent="Wizard"]
+offset_left = 333.981
+offset_top = -470.874
+offset_right = 5855.98
+offset_bottom = 134.126
+theme_override_constants/line_spacing = 25
+theme_override_font_sizes/font_size = 32
+text = "Greetings, mere mortal! I am Ratticus Magus, the most illustrious and enigmatic wizard rat to ever scurry through the realms of magic. My fur is woven with the threads of ancient spells, and my whiskers tingle with the energies of the arcane. But alas, do not think for a moment that I shall willingly lend my magical prowess to the likes of you, a mere ferret!
+
+I have spent countless rodent years honing my magical abilities in the hidden nooks and crannies of the mystical world. My tiny paws have delved into the secrets of the cosmos, and my keen senses have deciphered the whispers of the magical winds. I have no interest in assisting a bumbling ferret on their quest for glory or treasure.
+
+Why, you may ask, should a wizard rat of such grandeur stoop to aid a creature so devoid of fur and grace? The answer lies in the very nature of my rodent soul. I am an independent spirit, a whiskered wanderer, and I care not for the troubles of the world beyond my labyrinthine abode.
+
+Should you dare to beseech my aid, prepare yourself for a storm of indignant squeaks and a chorus of disdainful tail flicks. My magical abilities shall remain locked away in the recesses of my mystical sanctum, far from the reach of your ferret paws.
+
+So, adventurer, if you seek the assistance of Ratticus Magus, be warned that you tread on perilous ground. My fur bristles with the arrogance of a thousand wizards, and my reluctance to help is as immutable as the laws of magic themselves. Turn away, and let my whiskers disappear into the shadows, for you shall find no ally in this wizard rat."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_4stnj")
+autoplay = true
+
+[connection signal="body_entered" from="Pigeon/Speed" to="Pigeon/Speed" method="_on_body_entered"]
